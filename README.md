@@ -39,6 +39,18 @@ assets/css, assets/js         ← tela das páginas (visual e PDF SENAI, modo lo
 tasks/                        ← quadro de tarefas (STATUS.md + etapas)
 ```
 
+## Atividade prática de 1 questão (layout SENAI)
+
+```bash
+python ATIVIDADE-PRATICA.py TESTES-DE-FRONTEND/ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-DESAFIO-01-CASOS-DE-TESTE.md
+```
+
+Gera a página no layout da folha SENAI (logo SESI SENAI, título, Data, Docente, Curso, Unidade
+Curricular, Turma, Estudante, Desempenho; faixa azul "ITEM 1"; capacidades; Contexto e Comando).
+Botões **📥 Exportar PDF** (impressão do navegador: "Salvar como PDF", igual à tela) e
+**📄 Exportar Word** (`.doc` com o mesmo layout). Só aceita fonte com **1 questão**; o formato da
+fonte está no cabeçalho do `ATIVIDADE-PRATICA.py`.
+
 ## Quadro de tarefas
 
 O `index.html` da raiz mostra o quadro (`tasks/STATUS.md` + etapas) em cards: agente, quando

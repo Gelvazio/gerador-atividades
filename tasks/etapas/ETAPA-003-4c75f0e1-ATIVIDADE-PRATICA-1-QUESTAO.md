@@ -10,7 +10,7 @@ OBJETIVA" (layout: logo SENAI | título, Data, Docente, Curso Técnico em, Unida
 Turma, Estudante | Desempenho; faixa azul "ITEM 1"; linha CAPACIDADE; Contexto e Comando).
 **Objetivo:** gerar atividade prática de 1 questão no layout SENAI da imagem, igual no HTML, no
 PDF e no Word, sem banco.
-**Próximo passo:** 003.1 — aguardar a aprovação do plano pelo usuário.
+**Próximo passo:** 003.8 — aceite do usuário (HTML, PDF e Word).
 
 ### Escopo
 
@@ -46,15 +46,21 @@ visual do HTML, PDF e Word com o usuário (regra: sem navegador).
 | Risco | Plano B |
 |-------|---------|
 | Word mostrar a tabela diferente do HTML | Tabela simples com bordas e larguras fixas em pt (o Word respeita) |
-| Logo SENAI não ser o oficial | Logo desenhado (faixas azuis + "SENAI"); trocar o PNG por o oficial quando o usuário enviar |
+| Logo no Word | O gerador embute o logo no HTML (data URI): o Word recebe a imagem sem depender de arquivo |
+
+### Decisões
+
+| Decisão | Quando | Quem | Por quê |
+|---------|--------|------|---------|
+| Logo SESI SENAI (`logo-sesi-senai.png`) em vez de desenhar um só SENAI | 2026-10-14 09:02 | Usuário | "USE A LOGO SESI SENAI MESMO" |
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 003.1 | Aprovação do plano pelo usuário | 👀 Aguardando o usuário | — | — |
-| 003.2 | Logo `assets/img/logo-senai.png` | ⬜ Pendente | — | Arquivo gerado |
-| 003.3 | Template + CSS (tela e impressão A4) | ⬜ Pendente | — | Leitura |
-| 003.4 | JS: PDF (impressão) e Word (`documento-word.js` + exportador) | ⬜ Pendente | — | `node --check` |
-| 003.5 | `ATIVIDADE-PRATICA.py` | ⬜ Pendente | — | `py_compile` + geração |
-| 003.6 | Fonte do Desafio 1 (1 questão) e geração do HTML | ⬜ Pendente | — | Script de conferência |
-| 003.7 | README, quadro regenerado, commit + push | ⬜ Pendente | — | `git log` |
-| 003.8 | Aceite do usuário (HTML, PDF e Word) | ⬜ Pendente | — | — |
+| 003.1 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-14 09:02 | Usuário: "USE A LOGO SESI SENAI MESMO" (aprova o plano trocando o logo) |
+| 003.2 | Logo `assets/img/logo-sesi-senai.png` (copiado do aulasenai) | ✅ Concluído | 2026-10-14 09:02 | Arquivo copiado (250 × 48) |
+| 003.3 | Template + CSS (tela e impressão A4) | ✅ Concluído | 2026-10-14 09:04 | Leitura; linhas ≤ 100 caracteres |
+| 003.4 | JS: PDF (impressão) e Word (`documento-word.js` + exportador) | ✅ Concluído | 2026-10-14 09:04 | `node --check` ok |
+| 003.5 | `ATIVIDADE-PRATICA.py` | ✅ Concluído | 2026-10-14 09:04 | Gera o HTML; fonte com 3 questões é recusada com erro claro |
+| 003.6 | Fonte do Desafio 1 (1 questão) e geração do HTML | ✅ Concluído | 2026-10-14 09:04 | CSS/JS existem; logo embutido; curso, UC, C2, C3, contexto e tópicos presentes; sem marcador sobrando |
+| 003.7 | README, quadro regenerado, commit + push | ✅ Concluído | 2026-10-14 09:04 | `git log` / push para origin/main |
+| 003.8 | Aceite do usuário (abrir `TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADE-PRATICA-DESAFIO-01-CASOS-DE-TESTE.html`, exportar PDF e Word) | 👀 Aguardando o usuário | — | — |

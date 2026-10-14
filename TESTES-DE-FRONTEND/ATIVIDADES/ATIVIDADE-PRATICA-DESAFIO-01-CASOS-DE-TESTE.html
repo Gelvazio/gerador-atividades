@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE PRÁTICA — Desafio 1 — Escrever 3 Casos de Teste do Login</title>
+    <link rel="stylesheet" href="../../assets/css/atividade-pratica-unica.css">
+</head>
+<body data-nome-arquivo="ATIVIDADE-PRATICA-DESAFIO-01-CASOS-DE-TESTE" data-rodape="ATIVIDADE PRÁTICA · Testes de Front-End · SENAI">
+    <nav class="barra-exportar" aria-label="Exportar">
+        <button class="barra-exportar__botao" id="botao-pdf"
+                type="button">📥 Exportar PDF</button>
+        <button class="barra-exportar__botao barra-exportar__botao--word" id="botao-word"
+                type="button">📄 Exportar Word</button>
+        <small class="barra-exportar__dica">PDF: na janela de impressão, escolha
+            "Salvar como PDF".</small>
+    </nav>
+
+    <main class="folha" id="folha-atividade">
+        <table class="cabecalho-senai">
+            <colgroup>
+                <col class="cabecalho-senai__coluna-logo">
+                <col class="cabecalho-senai__coluna-dados">
+                <col class="cabecalho-senai__coluna-desempenho">
+            </colgroup>
+            <tr>
+                <td class="cabecalho-senai__logo" rowspan="7">
+                    <img class="cabecalho-senai__imagem" src="data:image/png;base64,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" alt="SESI SENAI">
+                    <p class="cabecalho-senai__instituicao">Serviço Nacional de Aprendizagem
+                        Industrial</p>
+                    <p class="cabecalho-senai__estado">Santa Catarina</p>
+                </td>
+                <th class="cabecalho-senai__titulo">ATIVIDADE PRÁTICA</th>
+                <th class="cabecalho-senai__desempenho">Desempenho</th>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Data:</strong>
+                    <em class="preencher">preenchimento pelo docente</em></td>
+                <td class="cabecalho-senai__nota" rowspan="6"></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Docente:</strong>
+                    <em class="preencher">preenchimento pelo docente</em></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Curso Técnico em</strong>
+                    <em class="preencher">INFORMÁTICA PARA INTERNET</em></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo cabecalho-senai__campo--uc">Unidade Curricular:
+                    TESTES DE FRONT-END</td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Turma:</strong>
+                    <em class="preencher">preenchimento pelo docente</em></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Estudante:</strong>
+                    <em class="preencher">preenchimento pelo estudante</em></td>
+            </tr>
+        </table>
+
+        <table class="questao">
+            <tr>
+                <th class="questao__faixa">ITEM 1</th>
+            </tr>
+            <tr>
+                <td class="questao__capacidade">
+                    <p class="questao__capacidade-linha">CAPACIDADE: C2 — Reconhecer os requisitos da documentação de testes</p>
+                    <p class="questao__capacidade-linha">CAPACIDADE: C3 — Reconhecer as etapas de planejamento de testes</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="questao__corpo">
+                    <p class="questao__paragrafo">Contexto: Você, como aluno consultor, foi chamado para escrever os casos de teste do módulo de Login de uma aplicação web antes de ela ser publicada. A tela de login tem os campos E-mail e Senha e o botão Entrar; depois do login certo, o usuário vai para o Painel (Dashboard).</p>
+                    <p class="questao__paragrafo">Comando: Elabore 3 casos de teste padronizados para o módulo de Login. Para cada caso, especifique: ID, Título, Pré-requisito, Passos numerados (1, 2, 3...) e Resultado Esperado verificável.</p>
+                    <ul class="questao__topicos">
+                        <li>a) Autenticação com credenciais válidas (caminho feliz).</li>
+                        <li>b) Tentativa de login com senha incorreta (tratamento de erro).</li>
+                        <li>c) Submissão com o campo de e-mail em branco (validação de formulário no frontend).</li>
+                    </ul>
+                    <label class="resposta__rotulo" for="resposta-item-1">Resposta:</label>
+                    <textarea class="resposta__campo" id="resposta-item-1" rows="30"
+                              placeholder="Escreva aqui a sua resposta..."></textarea>
+                    <div class="resposta__impressao" data-linhas="30"></div>
+                </td>
+            </tr>
+        </table>
+    </main>
+
+    <script src="../../assets/js/documento-word.js"></script>
+    <script src="../../assets/js/atividade-pratica-unica.js"></script>
+</body>
+</html>

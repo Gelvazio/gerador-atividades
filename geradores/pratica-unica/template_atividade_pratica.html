@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITULO}} — {{TEMA}}</title>
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade-pratica-unica.css">
+</head>
+<body data-nome-arquivo="{{NOME_ARQUIVO}}" data-rodape="{{RODAPE}}">
+    <nav class="barra-exportar" aria-label="Exportar">
+        <button class="barra-exportar__botao" id="botao-pdf"
+                type="button">📥 Exportar PDF</button>
+        <button class="barra-exportar__botao barra-exportar__botao--word" id="botao-word"
+                type="button">📄 Exportar Word</button>
+        <small class="barra-exportar__dica">PDF: na janela de impressão, escolha
+            "Salvar como PDF".</small>
+    </nav>
+
+    <main class="folha" id="folha-atividade">
+        <table class="cabecalho-senai">
+            <colgroup>
+                <col class="cabecalho-senai__coluna-logo">
+                <col class="cabecalho-senai__coluna-dados">
+                <col class="cabecalho-senai__coluna-desempenho">
+            </colgroup>
+            <tr>
+                <td class="cabecalho-senai__logo" rowspan="7">
+                    <img class="cabecalho-senai__imagem" src="{{LOGO}}" alt="SESI SENAI">
+                    <p class="cabecalho-senai__instituicao">Serviço Nacional de Aprendizagem
+                        Industrial</p>
+                    <p class="cabecalho-senai__estado">Santa Catarina</p>
+                </td>
+                <th class="cabecalho-senai__titulo">{{TITULO}}</th>
+                <th class="cabecalho-senai__desempenho">Desempenho</th>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Data:</strong>
+                    <em class="preencher">preenchimento pelo docente</em></td>
+                <td class="cabecalho-senai__nota" rowspan="6"></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Docente:</strong>
+                    <em class="preencher">preenchimento pelo docente</em></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Curso Técnico em</strong>
+                    <em class="preencher">{{CURSO}}</em></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo cabecalho-senai__campo--uc">Unidade Curricular:
+                    {{UC}}</td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Turma:</strong>
+                    <em class="preencher">preenchimento pelo docente</em></td>
+            </tr>
+            <tr>
+                <td class="cabecalho-senai__campo"><strong>Estudante:</strong>
+                    <em class="preencher">preenchimento pelo estudante</em></td>
+            </tr>
+        </table>
+
+        <table class="questao">
+            <tr>
+                <th class="questao__faixa">ITEM 1</th>
+            </tr>
+            <tr>
+                <td class="questao__capacidade">
+{{CAPACIDADES}}
+                </td>
+            </tr>
+            <tr>
+                <td class="questao__corpo">
+                    <p class="questao__paragrafo">Contexto: {{CONTEXTO}}</p>
+                    <p class="questao__paragrafo">Comando: {{COMANDO}}</p>
+{{TOPICOS}}
+                    <label class="resposta__rotulo" for="resposta-item-1">Resposta:</label>
+                    <textarea class="resposta__campo" id="resposta-item-1" rows="{{LINHAS}}"
+                              placeholder="Escreva aqui a sua resposta..."></textarea>
+                    <div class="resposta__impressao" data-linhas="{{LINHAS}}"></div>
+                </td>
+            </tr>
+        </table>
+    </main>
+
+    <script src="{{ASSETS}}/js/documento-word.js"></script>
+    <script src="{{ASSETS}}/js/atividade-pratica-unica.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Atividade prática de 1 questão no layout SENAI (ATIVIDADE-PRATICA.py): tela e impressão A4.
+   O PDF é a impressão do navegador, por isso a tela já desenha a folha igual ao papel. */
+:root {
+    --cor-senai: #004a99;
+    --cor-faixa-item: #004a99;
+    --cor-preencher: #4a90d9;
+    --cor-borda: #000000;
+    --cor-fundo-tela: #e9edf3;
+    --cor-folha: #ffffff;
+    --cor-linha-resposta: #c8ced8;
+    --fonte-folha: Arial, Helvetica, sans-serif;
+    --fonte-uc: "Times New Roman", Times, serif;
+    --largura-folha: 210mm;
+    --margem-folha: 15mm;
+    --altura-linha-resposta: 8mm;
+    --borda: 1px solid var(--cor-borda);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--cor-fundo-tela);
+    font-family: var(--fonte-folha);
+    color: #000000;
+}
+
+/* Barra de exportação (só na tela) */
+.barra-exportar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+}
+.barra-exportar__botao {
+    font: inherit;
+    font-weight: 700;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 6px;
+    background: var(--cor-senai);
+    color: #ffffff;
+    cursor: pointer;
+}
+.barra-exportar__botao--word { background: #2b579a; }
+.barra-exportar__dica { color: #4a5568; }
+
+/* Folha A4 */
+.folha {
+    width: var(--largura-folha);
+    max-width: 100%;
+    min-height: 297mm;
+    margin: 0 auto 24px;
+    padding: var(--margem-folha);
+    background: var(--cor-folha);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Cabeçalho SENAI */
+.cabecalho-senai, .questao {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.cabecalho-senai td, .cabecalho-senai th, .questao td, .questao th {
+    border: var(--borda);
+    padding: 2px 6px;
+    vertical-align: top;
+}
+.cabecalho-senai__coluna-logo { width: 22%; }
+.cabecalho-senai__coluna-dados { width: 63%; }
+.cabecalho-senai__coluna-desempenho { width: 15%; }
+.cabecalho-senai__logo { text-align: center; vertical-align: middle; padding: 6px; }
+.cabecalho-senai__imagem { display: block; width: 100%; max-width: 160px; margin: 0 auto 8px; }
+.cabecalho-senai__instituicao { margin: 0 0 10px; font-weight: 700; font-size: 11pt; }
+.cabecalho-senai__estado { margin: 0; font-size: 11pt; }
+.cabecalho-senai__titulo { font-size: 13pt; text-align: center; }
+.cabecalho-senai__desempenho { font-size: 11pt; text-align: center; }
+.cabecalho-senai__campo { font-size: 11pt; }
+.cabecalho-senai__campo--uc { font-family: var(--fonte-uc); font-size: 13pt; }
+.preencher { color: var(--cor-preencher); font-weight: 700; }
+
+/* Questão */
+.questao { margin-top: -1px; }
+.questao__faixa {
+    background: var(--cor-faixa-item);
+    color: #ffffff;
+    text-align: left;
+    font-weight: 400;
+    font-size: 11pt;
+    padding: 4px 8px;
+}
+.questao__capacidade { font-size: 11pt; padding: 6px 8px 12px; }
+.questao__capacidade-linha { margin: 0 0 4px; }
+.questao__corpo { font-size: 11pt; padding: 6px 8px 12px; }
+.questao__paragrafo { margin: 0 0 14px; line-height: 1.35; }
+.questao__topicos { margin: 0 0 14px; padding-left: 0; list-style: none; line-height: 1.35; }
+
+/* Resposta: campo na tela, texto ou linhas em branco na impressão */
+.resposta__rotulo { display: block; font-weight: 700; margin-bottom: 4px; }
+.resposta__campo {
+    width: 100%;
+    font: inherit;
+    line-height: var(--altura-linha-resposta);
+    padding: 0 4px;
+    border: 1px dashed var(--cor-linha-resposta);
+    resize: vertical;
+}
+.resposta__impressao { display: none; }
+
+@page { size: A4; margin: 15mm; }
+
+@media print {
+    body { background: #ffffff; }
+    .barra-exportar, .resposta__campo { display: none; }
+    .folha { margin: 0; padding: 0; box-shadow: none; width: auto; min-height: 0; }
+    .preencher, .questao__faixa, .cabecalho-senai__imagem {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .resposta__impressao {
+        display: block;
+        white-space: pre-wrap;
+        line-height: var(--altura-linha-resposta);
+        background-image: linear-gradient(transparent calc(var(--altura-linha-resposta) - 1px),
+            var(--cor-linha-resposta) 1px);
+        background-size: 100% var(--altura-linha-resposta);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .cabecalho-senai, .questao__faixa, .questao__capacidade { break-inside: avoid; }
+}
+
+@media (max-width: 800px) {
+    .folha { padding: 8px; min-height: 0; }
+}
