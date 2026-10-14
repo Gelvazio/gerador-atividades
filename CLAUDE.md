@@ -12,6 +12,10 @@ Regras para qualquer IA neste repositório.
   atualizam sozinhos; gerador novo deve chamar `gerar_pagina_atividades()` ao terminar; página
   criada de outro jeito → `python scripts/gerar_pagina_atividades.py`. Commitar o
   `atividades.html` junto com a atividade; nunca editar à mão.
+- **Prazo de entrega:** toda atividade tem data e hora inicial e final na fonte `.md`; padrão =
+  1 dia, no dia da geração, das 07:00 às 18:00 (gravado na fonte na primeira geração por
+  `geradores/comum/prazo.py`). Gerador novo deve usar `prazo.garantir_prazo_na_fonte` e
+  `prazo.tags_meta`.
 - **Git:** tudo na `main`; `git pull --rebase origin main` antes de começar; **1 commit + push por
   tarefa** (remoto `origin` = github.com/Gelvazio/gerador-atividades); nunca `git add .` nem
   `--force`.

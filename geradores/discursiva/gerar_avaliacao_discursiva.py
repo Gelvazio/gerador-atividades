@@ -31,12 +31,14 @@ GERADOR = Path(__file__).resolve().parent
 sys.path.insert(0, str(GERADOR.parent / "comum"))
 import capacidades as cap  # noqa: E402
 import materia as dados_materia  # noqa: E402
+import prazo  # noqa: E402
 from configuracao import caminho_relativo_assets  # noqa: E402
 
 TEMPLATE = GERADOR / "template_avaliacao_discursiva.html"
 PASTA_FONTES = "CONTEUDO"
 FONTE_PADRAO = "AVALIACAO-PRATICA.md"
 SUFIXO_GABARITO = "-GABARITO.md"
+TIPO_ATIVIDADE = "Discursiva / prática"
 MAXIMO_CARACTERES = 3000
 PONTOS_POR_QUESTAO_PADRAO = 1.0
 CAMPO_PONTOS_POR_QUESTAO = "Pontos por questão"
@@ -529,6 +531,7 @@ def montar_trocas(meta, itens, contexto):
         "{{ATRIBUTOS_BODY}}": atributos_body(meta),
         "{{MAXIMO_CARACTERES}}": str(maximo),
         "{{ASSETS}}": contexto["assets"],
+        "{{PRAZO}}": prazo.tags_meta(meta, TIPO_ATIVIDADE),
     }
 
 
@@ -545,6 +548,7 @@ def gerar_pagina(pasta, caminho_md, meta, orientacoes, itens):
     Returns:
         Caminho do HTML gerado.
     """
+    meta = prazo.garantir_prazo_na_fonte(caminho_md, meta)
     contexto = {
         "dados": dados_materia.ler_materia(pasta),
         "orientacoes": orientacoes, "arquivo_md": caminho_md.name, "pasta": pasta,

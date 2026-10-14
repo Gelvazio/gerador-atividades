@@ -29,6 +29,7 @@ RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ / "geradores" / "comum"))
 sys.path.insert(0, str(RAIZ / "scripts"))
 import materia as dados_materia  # noqa: E402
+import prazo  # noqa: E402
 from configuracao import ASSETS, caminho_relativo_assets  # noqa: E402
 from gerar_pagina_atividades import gerar_pagina_atividades  # noqa: E402
 
@@ -36,6 +37,7 @@ TEMPLATE = RAIZ / "geradores" / "pratica-unica" / "template_atividade_pratica.ht
 LOGO = ASSETS / "img" / "logo-sesi-senai.png"
 PASTA_FONTES = "CONTEUDO"
 TITULO_PADRAO = "ATIVIDADE PRÁTICA"
+TIPO_ATIVIDADE = "Prática (1 questão)"
 LINHAS_PADRAO = 20
 PREFIXO_CURSO = "Técnico em "
 CAMPOS_CAPACIDADES = ("capacidades", "capacidades_socioemocionais")
@@ -185,6 +187,7 @@ def montar_trocas(metadados, questao, dados, pasta_pagina):
         "{{COMANDO}}": escapar(extrair_secao(questao, "Comando")),
         "{{TOPICOS}}": html_topicos(extrair_secao(questao, "Tópicos")),
         "{{LINHAS}}": linhas, "{{LOGO}}": logo_em_data_uri(),
+        "{{PRAZO}}": prazo.tags_meta(metadados, TIPO_ATIVIDADE),
         "{{ASSETS}}": caminho_relativo_assets(pasta_pagina),
         "{{RODAPE}}": escapar(f"{titulo} · {dados['uc_curta']} · SENAI"),
     }
@@ -201,6 +204,7 @@ def gerar(caminho_md):
     """
     caminho_md = Path(caminho_md).resolve()
     metadados, questao = ler_fonte(caminho_md)
+    metadados = prazo.garantir_prazo_na_fonte(caminho_md, metadados)
     pasta_pagina = caminho_md.parent
     if pasta_pagina.name == PASTA_FONTES:
         pasta_pagina = pasta_pagina.parent

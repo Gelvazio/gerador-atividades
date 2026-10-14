@@ -1,15 +1,52 @@
-// Busca da página atividades.html: esconde as matérias e as atividades que não têm o texto
-// digitado (procura no nome da matéria, no curso e no título de cada atividade).
+// Página atividades.html: calcula a situação de cada atividade pelo prazo (ao abrir a página:
+// ⏳ ainda não abriu · 🟢 aberta · 🔴 encerrada) e faz a busca, que esconde as matérias e os
+// cards que não têm o texto digitado (nome da matéria, curso, tipo e título da atividade).
 
 const CLASSE_OCULTO = 'esta-oculto';
 const SELETOR_MATERIA = '.materia';
-const SELETOR_ATIVIDADE = '.materia__atividade';
+const SELETOR_ATIVIDADE = '.atividade';
+const SELETOR_SITUACAO = '.atividade__situacao';
+const SITUACOES = {
+    futura: { classe: 'atividade--futura', texto: '⏳ Ainda não abriu' },
+    aberta: { classe: 'atividade--aberta', texto: '🟢 Aberta para entrega' },
+    encerrada: { classe: 'atividade--encerrada', texto: '🔴 Prazo encerrado' },
+};
 
 /**
- * Mostra ou esconde as atividades de um card conforme a busca.
+ * Situação da atividade agora, pelo prazo do card (data-inicio e data-fim).
+ * @param {HTMLElement} card - Card da atividade.
+ * @param {Date} agora - Momento de referência.
+ * @returns {string|null} Chave da situação, ou null quando não há prazo.
+ */
+function calcularSituacao(card, agora) {
+    const { inicio, fim } = card.dataset;
+    if (!inicio && !fim) return null;
+    const naoAbriuAinda = inicio && agora < new Date(inicio);
+    if (naoAbriuAinda) return 'futura';
+    const jaEncerrou = fim && agora > new Date(fim);
+    if (jaEncerrou) return 'encerrada';
+    return 'aberta';
+}
+
+/**
+ * Marca a situação em todos os cards de atividade.
+ */
+function marcarSituacoes() {
+    const agora = new Date();
+    document.querySelectorAll(SELETOR_ATIVIDADE).forEach((card) => {
+        const situacao = SITUACOES[calcularSituacao(card, agora)];
+        const campo = card.querySelector(SELETOR_SITUACAO);
+        if (!situacao || !campo) return;
+        card.classList.add(situacao.classe);
+        campo.textContent = situacao.texto;
+    });
+}
+
+/**
+ * Mostra ou esconde as atividades de um card de matéria conforme a busca.
  * @param {HTMLElement} card - Card da matéria.
- * @param {string} busca - Texto buscado (minúsculas).
- * @returns {boolean} true quando o card deve aparecer.
+ * @param {string} busca - Texto buscado (minúsculas; vazio mostra tudo).
+ * @returns {boolean} true quando o card da matéria deve aparecer.
  */
 function filtrarCard(card, busca) {
     const cabecalho = (card.querySelector('.materia__titulo')?.textContent + ' ' +
@@ -32,8 +69,7 @@ function aplicarBusca() {
     const cards = [...document.querySelectorAll(SELETOR_MATERIA)];
     let visiveis = 0;
     cards.forEach((card) => {
-        const deveAparecer = !busca || filtrarCard(card, busca);
-        if (!busca) filtrarCard(card, '');
+        const deveAparecer = filtrarCard(card, busca);
         card.classList.toggle(CLASSE_OCULTO, !deveAparecer);
         if (deveAparecer) visiveis += 1;
     });
@@ -42,9 +78,10 @@ function aplicarBusca() {
 }
 
 /**
- * Liga a busca.
+ * Inicia a página: situação dos prazos e busca.
  */
 function iniciarPaginaAtividades() {
+    marcarSituacoes();
     document.getElementById('busca-atividades')?.addEventListener('input', aplicarBusca);
     aplicarBusca();
 }

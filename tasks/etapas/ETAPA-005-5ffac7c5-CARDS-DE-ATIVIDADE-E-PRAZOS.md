@@ -6,7 +6,7 @@ aparecer em forma de um card pequeno, deixe o card mae de materia maior pra isso
 ter data de entrega inicial e data de entrega final e hora inicial e hora final"
 **Objetivo:** cada atividade num card pequeno dentro do card da matéria, com o prazo de entrega
 (data e hora de início e de fim).
-**Próximo passo:** 005.1 — aguardar a aprovação do plano e as datas das 2 atividades.
+**Próximo passo:** 005.6 — aceite do usuário.
 
 ### Escopo
 
@@ -38,11 +38,18 @@ contendo 2 cards pequenos com início e fim; `node --check`; conferência por sc
 | Situação (aberta/encerrada) depender do relógio do computador do aluno | É só informativa (não bloqueia) |
 | Página antiga sem as tags | Card mostra "Prazo não definido" |
 
+### Decisões
+
+| Decisão | Quando | Quem | Por quê |
+|---------|--------|------|---------|
+| Prazo padrão = 1 dia, no dia da geração, 07:00 às 18:00 | 2026-10-14 09:17 | Usuário | "o prazo e 1 dia, na data de geracao delas... 7 da manha e... 6 da tarde" |
+| Prazo padrão gravado na fonte na 1ª geração | 2026-10-14 09:17 | Claude Code | Para a data não mudar quando a atividade for gerada de novo |
+
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 005.1 | Aprovação do plano e datas das 2 atividades | 👀 Aguardando o usuário | — | — |
-| 005.2 | Leitura e validação do prazo (módulo comum) + meta tags nos 3 geradores/templates | ⬜ Pendente | — | `py_compile` + páginas regeneradas |
-| 005.3 | Leitor do `atividades.html` lê prazo e tipo | ⬜ Pendente | — | Saída com as 2 atividades e prazos |
-| 005.4 | Tela: card da matéria largo + cards pequenos + situação | ⬜ Pendente | — | `node --check` |
-| 005.5 | Prazos nas 2 fontes, regenerar, README, quadro, commit + push | ⬜ Pendente | — | Script de conferência / `git log` |
-| 005.6 | Aceite do usuário | ⬜ Pendente | — | — |
+| 005.1 | Aprovação do plano e datas das 2 atividades | ✅ Concluído | 2026-10-14 09:15 | Usuário: "preencho depois" (aprova; as 2 atividades ficam sem prazo até ele preencher) |
+| 005.2 | Leitura e validação do prazo (módulo comum) + meta tags nos 3 geradores/templates | ✅ Concluído | 2026-10-14 09:18 | `py_compile` ok; 3 geradores gravam `<meta>`; data inválida e fim antes do início dão erro |
+| 005.3 | Leitor do `atividades.html` lê prazo e tipo | ✅ Concluído | 2026-10-14 09:18 | 2 atividades com tipo, início e fim |
+| 005.4 | Tela: card da matéria largo + cards pequenos + situação | ✅ Concluído | 2026-10-14 09:18 | `node --check` ok |
+| 005.5 | Prazos nas 2 fontes, regenerar, README, quadro, commit + push | ✅ Concluído | 2026-10-14 09:18 | Prazo 14/10/2026 07:00–18:00 gravado nas 2 fontes; gerar de novo não muda; `git log` |
+| 005.6 | Aceite do usuário (abrir `atividades.html`) | 👀 Aguardando o usuário | — | — |

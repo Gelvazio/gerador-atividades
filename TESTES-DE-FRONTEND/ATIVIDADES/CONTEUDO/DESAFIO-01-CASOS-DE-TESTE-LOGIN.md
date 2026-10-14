@@ -14,6 +14,10 @@
 - **Campo do tamanho da resposta:** sim
 - **Capacidade avaliada:** Escrever casos de teste padronizados (ID, Título, Pré-requisito, Passos numerados e Resultado esperado verificável) para o módulo de Login de uma aplicação web, conforme a aula 02 (Planejamento, Verificação, Validação e Casos de Teste): caminho feliz, tratamento de erro e validação de formulário no frontend.
 - **Correção:** o aluno entrega o PDF exportado; o professor corrige cada tópico pelo padrão de resposta (DESAFIO-01-CASOS-DE-TESTE-LOGIN-GABARITO.md, só do professor).
+- **Data de entrega inicial:** 14/10/2026
+- **Hora de entrega inicial:** 07:00
+- **Data de entrega final:** 14/10/2026
+- **Hora de entrega final:** 18:00
 
 **Seu papel em todas as questões:** Você, como aluno consultor, foi chamado para escrever os casos de teste do módulo de Login de uma aplicação web antes de ela ser publicada. A tela de login tem os campos **E-mail** e **Senha** e o botão **Entrar**; depois do login certo, o usuário vai para o **Painel (Dashboard)**.
 

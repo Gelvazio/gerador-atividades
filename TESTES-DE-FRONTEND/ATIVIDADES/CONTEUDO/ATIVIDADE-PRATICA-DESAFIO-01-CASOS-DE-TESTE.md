@@ -5,6 +5,10 @@
 - **Página:** ATIVIDADE-PRATICA-DESAFIO-01-CASOS-DE-TESTE.html
 - **Capacidade:** C2, C3
 - **Linhas da resposta:** 30
+- **Data de entrega inicial:** 14/10/2026
+- **Hora de entrega inicial:** 07:00
+- **Data de entrega final:** 14/10/2026
+- **Hora de entrega final:** 18:00
 
 ## ITEM 1 — Escrever 3 Casos de Teste do Login
 

@@ -62,6 +62,22 @@ atualizar à mão (página criada de outro jeito):
 python scripts/gerar_pagina_atividades.py
 ```
 
+## Prazo de entrega
+
+Toda atividade tem prazo, no cabeçalho da fonte `.md`:
+
+```
+- **Data de entrega inicial:** 14/10/2026
+- **Hora de entrega inicial:** 07:00
+- **Data de entrega final:** 14/10/2026
+- **Hora de entrega final:** 18:00
+```
+
+**Padrão:** 1 dia, no dia da geração, das **07:00 às 18:00**. Na primeira geração, os campos
+que faltam são gravados na própria fonte (a data não muda ao gerar de novo); para mudar o prazo,
+edite a fonte e gere de novo. No `atividades.html`, cada atividade é um card pequeno com início,
+fim e a situação (⏳ ainda não abriu · 🟢 aberta · 🔴 encerrada), que é só informativa.
+
 ## Quadro de tarefas
 
 O `index.html` da raiz mostra o quadro (`tasks/STATUS.md` + etapas) em cards: agente, quando

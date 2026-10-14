@@ -17,6 +17,7 @@ from urllib.parse import quote
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "comum"))
 import capacidades as cap  # noqa: E402
 import materia as dados_materia  # noqa: E402
+import prazo  # noqa: E402
 from configuracao import caminho_relativo_assets  # noqa: E402
 
 GERADOR = Path(__file__).resolve().parent
@@ -27,6 +28,8 @@ CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 CAMPO_TURMA = "Turma"
 CAMPO_ROTULO = "Rótulo da aula"
 PREFIXOS_SEM_SUFIXO = ("AVALIACAO-", "ATIVIDADE-")
+TIPO_ATIVIDADE = "Objetiva"
+PADRAO_META_FONTE = re.compile(r"^- \*\*(.+?):\*\*\s*(.+)$", re.MULTILINE)
 PADRAO_DATA_NOME = re.compile(r"(\d{2})-(\d{2})-(\d{4})")
 ROTULOS_SLIDES = {".pdf": "📕 Slides (PDF)", ".pptx": "📕 Slides (PowerPoint)"}
 ROTULO_SLIDES_PADRAO = "📕 Slides"
@@ -66,6 +69,20 @@ def campo_opcional(texto, nome):
         return ""
 
 
+def ler_metadados_fonte(texto):
+    """Campos "- **Campo:** valor" do cabeçalho da fonte (antes do primeiro "## ").
+
+    Args:
+        texto: Conteúdo da fonte .md.
+
+    Returns:
+        Dicionário campo → valor.
+    """
+    cabecalho = re.split(r"^## ", texto, flags=re.M)[0]
+    return {chave.strip(): valor.strip()
+            for chave, valor in PADRAO_META_FONTE.findall(cabecalho)}
+
+
 def ler_questoes(md_path):
     texto = md_path.read_text(encoding="utf-8")
     meta = {
@@ -79,6 +96,8 @@ def ler_questoes(md_path):
         "pdf": campo(texto, "Slides"),
         "turma": campo_opcional(texto, CAMPO_TURMA),
     }
+    metadados = prazo.garantir_prazo_na_fonte(md_path, ler_metadados_fonte(texto))
+    meta["prazo"] = prazo.tags_meta(metadados, TIPO_ATIVIDADE)
     meta["letras"] = ""
     meta["rotulo"] = campo_opcional(texto, CAMPO_ROTULO) or f"Aula {meta['aula']}"
     itens = []
@@ -218,6 +237,7 @@ def gerar_atividade(md_path, dados):
     trocas = {
         "{{CARDS}}": "\n\n".join(card(it) for it in itens),
         "{{TOTAL}}": str(meta["total"]),
+        "{{PRAZO}}": meta["prazo"],
         "{{AULA}}": e(meta["aula"]),
         "{{ROTULO_AULA}}": e(meta["rotulo"]),
         "{{LETRAS}}": e(meta["letras"]),

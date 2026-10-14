@@ -10,7 +10,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main | #5 ([005-5ffac7c5](etapas/ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md)) plano aguardando aprovação; #1 a #4 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:11 |
+| local · main | #1 a #5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:18 |
 
 ## 📌 Tarefas
 
@@ -20,7 +20,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 | #2-0bf86ac8-1c6a-4f84 | Quadro de tarefas em `index.html` (cards, agente, datas, filtros) | 🟠 Alta | — | 👀 Aguardando aceite | — | [002-0bf86ac8](etapas/ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md) |
 | #3-4c75f0e1-7980-442c | Gerador `ATIVIDADE-PRATICA.py`: atividade de 1 questão no layout SENAI (HTML, PDF e Word, sem banco) | 🟠 Alta | — | 👀 Aguardando aceite | — | [003-4c75f0e1](etapas/ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md) |
 | #4-6e1ac89d-4bfc-486c | Menu "Atividades" e página `atividades.html` (matérias em cards, atualizada pelos geradores) | 🟠 Alta | — | 👀 Aguardando aceite | — | [004-6e1ac89d](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md) |
-| #5-5ffac7c5-a87c-42ab | Cards de atividade com prazo de entrega (data/hora inicial e final) no `atividades.html` | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 09:11) | [005-5ffac7c5](etapas/ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md) |
+| #5-5ffac7c5-a87c-42ab | Cards de atividade com prazo de entrega (data/hora inicial e final) no `atividades.html` | 🟠 Alta | — | 👀 Aguardando aceite | — | [005-5ffac7c5](etapas/ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md) |
 
 ## Escopo do projeto
 
@@ -55,6 +55,7 @@ configurável. A parte de tela (JS/CSS) e o banco continuam no projeto de destin
 | Remoto `origin` = github.com/Gelvazio/gerador-atividades; 1 commit + push por tarefa | 2026-10-14 08:40 | Usuário | "ligue ao repo remoto tb" |
 | Arquivos com resposta fora do Git (`.gitignore`) | 2026-10-14 08:47 | Claude Code | Remoto público: o aluno não pode ver o gabarito |
 | Toda atividade nova entra no `atividades.html` (geradores atualizam sozinhos) | 2026-10-14 09:08 | Usuário | Pedido da #4: "sempre que gerar nova atividade deve ser adicionado o link" |
+| Prazo padrão de entrega: 1 dia, no dia da geração, 07:00 às 18:00 (gravado na fonte) | 2026-10-14 09:17 | Usuário | Pedido na #5 |
 
 ## Pendências (ficou para depois)
 

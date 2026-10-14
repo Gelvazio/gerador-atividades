@@ -3,6 +3,7 @@
 Matéria = pasta com materia.json; atividades = páginas .html de <MATERIA>/ATIVIDADES/.
 O título de cada atividade vem do <title> da própria página.
 """
+import html
 import json
 import re
 from pathlib import Path
@@ -13,21 +14,57 @@ PASTAS_IGNORADAS = {".git", ".claude", "assets", "geradores", "scripts", "tasks"
 NOME_INDICE = "index.html"
 ROTULO_INDICE = "Índice das atividades"
 PADRAO_TITULO = re.compile(r"<title>(.*?)</title>", re.S | re.I)
+PADRAO_META = r'<meta name="{nome}" content="([^"]*)">'
+META_TIPO = "tipo-atividade"
+META_INICIO = "entrega-inicio"
+META_FIM = "entrega-fim"
+TIPO_INDICE = "Índice"
 
 
-def ler_titulo(pagina):
+def ler_titulo(texto, pagina):
     """Título da página (conteúdo do <title>), ou o nome do arquivo se não houver.
 
     Args:
+        texto: HTML da página.
         pagina: Arquivo .html.
 
     Returns:
         Título em texto simples.
     """
-    achado = PADRAO_TITULO.search(pagina.read_text(encoding="utf-8", errors="ignore"))
+    achado = PADRAO_TITULO.search(texto)
     if not achado:
         return pagina.stem
-    return " ".join(achado.group(1).split())
+    return html.unescape(" ".join(achado.group(1).split()))
+
+
+def ler_meta(texto, nome):
+    """Conteúdo de uma tag <meta name="..."> gravada pelos geradores.
+
+    Args:
+        texto: HTML da página.
+        nome: Nome da meta (tipo-atividade, entrega-inicio, entrega-fim).
+
+    Returns:
+        Conteúdo da tag ou "" se não existir.
+    """
+    achado = re.search(PADRAO_META.format(nome=re.escape(nome)), texto)
+    return html.unescape(achado.group(1)) if achado else ""
+
+
+def ler_pagina(pagina, raiz):
+    """Dados do card pequeno de uma atividade.
+
+    Args:
+        pagina: Arquivo .html da atividade.
+        raiz: Raiz do repositório (o link é relativo a ela).
+
+    Returns:
+        Dicionário {titulo, link, tipo, inicio, fim} (inicio/fim no formato AAAA-MM-DDTHH:MM).
+    """
+    texto = pagina.read_text(encoding="utf-8", errors="ignore")
+    return {"titulo": ler_titulo(texto, pagina), "link": pagina.relative_to(raiz).as_posix(),
+            "tipo": ler_meta(texto, META_TIPO), "inicio": ler_meta(texto, META_INICIO),
+            "fim": ler_meta(texto, META_FIM)}
 
 
 def localizar_materias(raiz):
@@ -56,17 +93,17 @@ def ler_atividades(pasta_materia, raiz):
         raiz: Raiz do repositório (os links são relativos a ela).
 
     Returns:
-        Lista de {titulo, link}.
+        Lista de {titulo, link, tipo, inicio, fim}.
     """
     pasta = pasta_materia / PASTA_ATIVIDADES
     if not pasta.is_dir():
         return []
     paginas = sorted(pagina for pagina in pasta.glob("*.html") if pagina.name != NOME_INDICE)
-    atividades = [{"titulo": ler_titulo(pagina),
-                   "link": pagina.relative_to(raiz).as_posix()} for pagina in paginas]
+    atividades = [ler_pagina(pagina, raiz) for pagina in paginas]
     indice = pasta / NOME_INDICE
     if indice.is_file():
-        atividades.append({"titulo": ROTULO_INDICE, "link": indice.relative_to(raiz).as_posix()})
+        atividades.append({"titulo": ROTULO_INDICE, "link": indice.relative_to(raiz).as_posix(),
+                           "tipo": TIPO_INDICE, "inicio": "", "fim": ""})
     return atividades
 
 
