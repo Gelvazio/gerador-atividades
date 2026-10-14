@@ -10,7 +10,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main | #1 a #5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:18 |
+| local · main | #6 ([006-b763ffc4](etapas/ETAPA-006-b763ffc4-PADRAO-TEMPLATE-IA.md)) plano aguardando aprovação; #1 a #5 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:21 |
 
 ## 📌 Tarefas
 
@@ -21,6 +21,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 | #3-4c75f0e1-7980-442c | Gerador `ATIVIDADE-PRATICA.py`: atividade de 1 questão no layout SENAI (HTML, PDF e Word, sem banco) | 🟠 Alta | — | 👀 Aguardando aceite | — | [003-4c75f0e1](etapas/ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md) |
 | #4-6e1ac89d-4bfc-486c | Menu "Atividades" e página `atividades.html` (matérias em cards, atualizada pelos geradores) | 🟠 Alta | — | 👀 Aguardando aceite | — | [004-6e1ac89d](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md) |
 | #5-5ffac7c5-a87c-42ab | Cards de atividade com prazo de entrega (data/hora inicial e final) no `atividades.html` | 🟠 Alta | — | 👀 Aguardando aceite | — | [005-5ffac7c5](etapas/ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md) |
+| #6-b763ffc4-d5bd-4890 | Colocar o repositório no padrão do template de IA (`template-inicial-tasks-ia`) | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 09:21) | [006-b763ffc4](etapas/ETAPA-006-b763ffc4-PADRAO-TEMPLATE-IA.md) |
 
 ## Escopo do projeto
 
@@ -36,6 +37,7 @@ configurável. A parte de tela (JS/CSS) e o banco continuam no projeto de destin
 | 003-4c75f0e1 | Gerador ATIVIDADE-PRATICA.py (1 questão) | [ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md](etapas/ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md) |
 | 004-6e1ac89d | Menu Atividades e atividades.html | [ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md) |
 | 005-5ffac7c5 | Cards de atividade e prazos | [ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md](etapas/ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md) |
+| 006-b763ffc4 | Padrão do template de IA | [ETAPA-006-b763ffc4-PADRAO-TEMPLATE-IA.md](etapas/ETAPA-006-b763ffc4-PADRAO-TEMPLATE-IA.md) |
 
 ## Riscos
 
