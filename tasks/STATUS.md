@@ -10,14 +10,14 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main | #2 ([002-0bf86ac8](etapas/ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md)) plano aguardando aprovação; #1 aguarda aceite | 👀 Aguardando o usuário | 2026-10-14 08:47 |
+| local · main | #1 e #2 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 08:51 |
 
 ## 📌 Tarefas
 
 | Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|
 | #1-90e93c4a-e4a0-4669 | Cópia independente do gerador de atividades (objetiva, prática, discursiva) | 🟠 Alta | — | 👀 Aguardando aceite | — | [001-90e93c4a](etapas/ETAPA-001-90e93c4a-COPIA-INDEPENDENTE-DO-GERADOR.md) |
-| #2-0bf86ac8-1c6a-4f84 | Quadro de tarefas em `index.html` (cards, agente, datas, filtros) | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 08:47) | [002-0bf86ac8](etapas/ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md) |
+| #2-0bf86ac8-1c6a-4f84 | Quadro de tarefas em `index.html` (cards, agente, datas, filtros) | 🟠 Alta | — | 👀 Aguardando aceite | — | [002-0bf86ac8](etapas/ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md) |
 
 ## Escopo do projeto
 

@@ -4,6 +4,9 @@ Regras para qualquer IA neste repositório.
 
 - **Quadro de tarefas:** seguir `.claude/rules/tasks/` (`quadro.md`, `ciclo-da-task.md`,
   `frentes-e-reserva.md`); índice em `tasks/STATUS.md`, detalhes na etapa (`tasks/etapas/`).
+- **Quadro em `index.html`:** gerado por `python scripts/gerar_quadro.py` (tela em
+  `scripts/quadro/`). Regenerar ao **encerrar cada tarefa** e commitar no mesmo commit; nunca
+  editar o `index.html` à mão.
 - **Git:** tudo na `main`; `git pull --rebase origin main` antes de começar; **1 commit + push por
   tarefa** (remoto `origin` = github.com/Gelvazio/gerador-atividades); nunca `git add .` nem
   `--force`.

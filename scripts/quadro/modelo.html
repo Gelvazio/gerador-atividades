@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro de Tarefas — {{TITULO}}</title>
+    <link rel="stylesheet" href="scripts/quadro/quadro.css">
+</head>
+<body>
+    <header class="topo">
+        <h1>🗂️ Quadro de Tarefas</h1>
+        <p class="topo__subtitulo">{{TITULO}} · gerado em {{GERADO_EM}} a partir de
+            <code>tasks/STATUS.md</code> (não editar este arquivo à mão)</p>
+    </header>
+
+    <main class="conteudo">
+        <section class="contadores" id="contadores" aria-label="Tarefas por status"></section>
+
+        <section class="filtros" aria-label="Filtros">
+            <label class="filtro">Status
+                <select id="filtro-status"><option value="">Todos</option></select>
+            </label>
+            <label class="filtro">Prioridade
+                <select id="filtro-prioridade"><option value="">Todas</option></select>
+            </label>
+            <label class="filtro">Agente
+                <select id="filtro-agente"><option value="">Todos</option></select>
+            </label>
+            <label class="filtro filtro--busca">Busca
+                <input id="filtro-busca" type="search" placeholder="Número, título, item...">
+            </label>
+            <button class="botao-limpar" id="botao-limpar" type="button">Limpar filtros</button>
+        </section>
+
+        <p class="resultado" id="resultado" aria-live="polite"></p>
+        <section class="grade" id="grade-tarefas" aria-label="Tarefas"></section>
+
+        <section class="frentes" aria-label="Frentes de trabalho">
+            <h2>🧭 Frentes de trabalho</h2>
+            <div class="frentes__lista" id="lista-frentes"></div>
+        </section>
+    </main>
+
+    <script type="application/json" id="dados-quadro">{{DADOS}}</script>
+    <script src="scripts/quadro/quadro.js"></script>
+</body>
+</html>

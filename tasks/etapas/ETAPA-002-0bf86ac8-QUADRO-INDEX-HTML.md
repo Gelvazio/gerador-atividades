@@ -5,7 +5,7 @@
 pegou, quando terminou, com cards e filtros"
 **Objetivo:** ver o quadro de tarefas (`tasks/STATUS.md` + etapas) em cards, com filtros, num
 `index.html` na raiz que abre por duplo clique.
-**Próximo passo:** 002.1 — aguardar a aprovação do plano pelo usuário.
+**Próximo passo:** 002.6 — aceite do usuário (abrir o `index.html` e testar os filtros).
 
 ### Escopo
 
@@ -41,9 +41,9 @@ no navegador com o usuário (regra: sem navegador).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 002.1 | Aprovação do plano pelo usuário | 👀 Aguardando o usuário | — | — |
-| 002.2 | Leitor do quadro (`scripts/quadro/leitor_quadro.py`) | ⬜ Pendente | — | Saída JSON com #1 e #2 |
-| 002.3 | Tela: `modelo.html`, `quadro.css`, `quadro.js` (cards, filtros, contadores, frentes) | ⬜ Pendente | — | `node --check` |
-| 002.4 | `scripts/gerar_quadro.py` → `index.html` | ⬜ Pendente | — | Script de conferência |
-| 002.5 | Regra no `CLAUDE.md` + README + commit + push | ⬜ Pendente | — | `git log` |
-| 002.6 | Aceite do usuário (abrir o `index.html`) | ⬜ Pendente | — | — |
+| 002.1 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-14 08:48 | Usuário respondeu "sim" |
+| 002.2 | Leitor do quadro (`scripts/quadro/leitor_quadro.py`) | ✅ Concluído | 2026-10-14 08:49 | Leu #1 e #2 (agente, pedido em, itens 9 e 6, próximo passo) e 1 frente |
+| 002.3 | Tela: `modelo.html`, `quadro.css`, `quadro.js` (cards, filtros, contadores, frentes) | ✅ Concluído | 2026-10-14 08:51 | `node --check` ok; linhas ≤ 100 caracteres |
+| 002.4 | `scripts/gerar_quadro.py` → `index.html` | ✅ Concluído | 2026-10-14 08:51 | JSON embutido com #1 e #2 (agente, pedida em, itens); referências CSS/JS existem; sem marcador sobrando |
+| 002.5 | Regra no `CLAUDE.md` + README + commit + push | ✅ Concluído | 2026-10-14 08:51 | `git log` / push para origin/main |
+| 002.6 | Aceite do usuário (abrir o `index.html`) | 👀 Aguardando o usuário | — | — |

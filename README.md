@@ -39,6 +39,16 @@ assets/css, assets/js         ← tela das páginas (visual e PDF SENAI, modo lo
 tasks/                        ← quadro de tarefas (STATUS.md + etapas)
 ```
 
+## Quadro de tarefas
+
+O `index.html` da raiz mostra o quadro (`tasks/STATUS.md` + etapas) em cards: agente, quando
+foi pedida, quando terminou, progresso dos itens e próximo passo, com filtros por status,
+prioridade, agente e busca. Abre por duplo clique. Para atualizar:
+
+```bash
+python scripts/gerar_quadro.py
+```
+
 ## Formato das fontes
 
 - **Objetiva:** `CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` com `## ITEM NN — Título`,
