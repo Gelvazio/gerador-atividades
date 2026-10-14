@@ -10,7 +10,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main | #1, #2 e #3 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:04 |
+| local · main | #4 ([004-6e1ac89d](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md)) plano aguardando aprovação; #1, #2 e #3 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:04 |
 
 ## 📌 Tarefas
 
@@ -19,6 +19,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 | #1-90e93c4a-e4a0-4669 | Cópia independente do gerador de atividades (objetiva, prática, discursiva) | 🟠 Alta | — | 👀 Aguardando aceite | — | [001-90e93c4a](etapas/ETAPA-001-90e93c4a-COPIA-INDEPENDENTE-DO-GERADOR.md) |
 | #2-0bf86ac8-1c6a-4f84 | Quadro de tarefas em `index.html` (cards, agente, datas, filtros) | 🟠 Alta | — | 👀 Aguardando aceite | — | [002-0bf86ac8](etapas/ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md) |
 | #3-4c75f0e1-7980-442c | Gerador `ATIVIDADE-PRATICA.py`: atividade de 1 questão no layout SENAI (HTML, PDF e Word, sem banco) | 🟠 Alta | — | 👀 Aguardando aceite | — | [003-4c75f0e1](etapas/ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md) |
+| #4-6e1ac89d-4bfc-486c | Menu "Atividades" e página `atividades.html` (matérias em cards, atualizada pelos geradores) | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 09:04) | [004-6e1ac89d](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md) |
 
 ## Escopo do projeto
 
@@ -32,6 +33,7 @@ configurável. A parte de tela (JS/CSS) e o banco continuam no projeto de destin
 | 001-90e93c4a | Cópia independente do gerador | [ETAPA-001-90e93c4a-COPIA-INDEPENDENTE-DO-GERADOR.md](etapas/ETAPA-001-90e93c4a-COPIA-INDEPENDENTE-DO-GERADOR.md) |
 | 002-0bf86ac8 | Quadro de tarefas em index.html | [ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md](etapas/ETAPA-002-0bf86ac8-QUADRO-INDEX-HTML.md) |
 | 003-4c75f0e1 | Gerador ATIVIDADE-PRATICA.py (1 questão) | [ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md](etapas/ETAPA-003-4c75f0e1-ATIVIDADE-PRATICA-1-QUESTAO.md) |
+| 004-6e1ac89d | Menu Atividades e atividades.html | [ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md) |
 
 ## Riscos
 
