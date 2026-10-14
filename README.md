@@ -51,6 +51,17 @@ Botões **📥 Exportar PDF** (impressão do navegador: "Salvar como PDF", igual
 **📄 Exportar Word** (`.doc` com o mesmo layout). Só aceita fonte com **1 questão**; o formato da
 fonte está no cabeçalho do `ATIVIDADE-PRATICA.py`.
 
+## Página de atividades (menu "Atividades")
+
+O `atividades.html` da raiz mostra **um card por matéria** (pasta com `materia.json`) com os
+links de todas as atividades geradas em `<MATERIA>/ATIVIDADES/`, e uma busca. Os geradores
+(`gerar.py` e `ATIVIDADE-PRATICA.py`) atualizam a página sozinhos a cada atividade nova. Para
+atualizar à mão (página criada de outro jeito):
+
+```bash
+python scripts/gerar_pagina_atividades.py
+```
+
 ## Quadro de tarefas
 
 O `index.html` da raiz mostra o quadro (`tasks/STATUS.md` + etapas) em cards: agente, quando

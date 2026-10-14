@@ -1,0 +1,18 @@
+/* Menu principal compartilhado (index.html e atividades.html). */
+.menu-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px 16px;
+    background: #1f3864;
+}
+.menu-principal__link {
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+.menu-principal__link:hover { background: rgba(255, 255, 255, 0.15); }
+.menu-principal__link--ativo { background: rgba(255, 255, 255, 0.25); font-weight: 700; }

@@ -7,6 +7,11 @@ Regras para qualquer IA neste repositório.
 - **Quadro em `index.html`:** gerado por `python scripts/gerar_quadro.py` (tela em
   `scripts/quadro/`). Regenerar ao **encerrar cada tarefa** e commitar no mesmo commit; nunca
   editar o `index.html` à mão.
+- **Página `atividades.html` (menu "Atividades"):** um card por matéria com o link de cada
+  atividade gerada. **Toda atividade nova entra nela:** `gerar.py` e `ATIVIDADE-PRATICA.py`
+  atualizam sozinhos; gerador novo deve chamar `gerar_pagina_atividades()` ao terminar; página
+  criada de outro jeito → `python scripts/gerar_pagina_atividades.py`. Commitar o
+  `atividades.html` junto com a atividade; nunca editar à mão.
 - **Git:** tudo na `main`; `git pull --rebase origin main` antes de começar; **1 commit + push por
   tarefa** (remoto `origin` = github.com/Gelvazio/gerador-atividades); nunca `git add .` nem
   `--force`.

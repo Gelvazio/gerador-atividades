@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quadro de Tarefas — {{TITULO}}</title>
+    <link rel="stylesheet" href="scripts/menu/menu.css">
     <link rel="stylesheet" href="scripts/quadro/quadro.css">
 </head>
 <body>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a class="menu-principal__link menu-principal__link--ativo" href="index.html"
+           aria-current="page">🗂️ Quadro de tarefas</a>
+        <a class="menu-principal__link" href="atividades.html">📚 Atividades</a>
+    </nav>
+
     <header class="topo">
         <h1>🗂️ Quadro de Tarefas</h1>
         <p class="topo__subtitulo">{{TITULO}} · gerado em {{GERADO_EM}} a partir de

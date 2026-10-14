@@ -27,8 +27,10 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ / "geradores" / "comum"))
+sys.path.insert(0, str(RAIZ / "scripts"))
 import materia as dados_materia  # noqa: E402
 from configuracao import ASSETS, caminho_relativo_assets  # noqa: E402
+from gerar_pagina_atividades import gerar_pagina_atividades  # noqa: E402
 
 TEMPLATE = RAIZ / "geradores" / "pratica-unica" / "template_atividade_pratica.html"
 LOGO = ASSETS / "img" / "logo-sesi-senai.png"
@@ -219,3 +221,4 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise SystemExit(__doc__)
     print(f"Página: {gerar(sys.argv[1])}")
+    print(f"atividades.html atualizado ({gerar_pagina_atividades()} matéria(s))")

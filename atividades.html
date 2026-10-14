@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades — Gerador de Atividades</title>
+    <link rel="stylesheet" href="scripts/menu/menu.css">
+    <link rel="stylesheet" href="scripts/atividades/atividades.css">
+</head>
+<body>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a class="menu-principal__link" href="index.html">🗂️ Quadro de tarefas</a>
+        <a class="menu-principal__link menu-principal__link--ativo" href="atividades.html"
+           aria-current="page">📚 Atividades</a>
+    </nav>
+
+    <header class="topo-atividades">
+        <h1>📚 Atividades</h1>
+        <p class="topo-atividades__subtitulo">Atividades geradas, por matéria · atualizado em
+            2026-10-14 09:08 (não editar este arquivo à mão)</p>
+    </header>
+
+    <main class="conteudo-atividades">
+        <label class="busca-atividades">Busca
+            <input id="busca-atividades" type="search" placeholder="Matéria ou atividade...">
+        </label>
+        <p class="resultado-atividades" id="resultado-atividades" aria-live="polite"></p>
+        <section class="grade-materias" id="grade-materias" aria-label="Matérias">
+            <article class="materia">
+                <h2 class="materia__titulo">Testes de Front-End</h2>
+                <p class="materia__curso">Técnico em Informática para Internet</p>
+                <p class="materia__quantidade">2 atividade(s) · pasta TESTES-DE-FRONTEND</p>
+                <ul class="materia__lista">
+                    <li class="materia__atividade"><a href="TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADE-PRATICA-DESAFIO-01-CASOS-DE-TESTE.html">ATIVIDADE PRÁTICA — Desafio 1 — Escrever 3 Casos de Teste do Login</a></li>
+                    <li class="materia__atividade"><a href="TESTES-DE-FRONTEND/ATIVIDADES/DESAFIO-01-CASOS-DE-TESTE-LOGIN.html">Desafio 1 — Aula 02 — Casos de Teste do Login — Casos de Teste Padronizados do Módulo de Login (3 Questões Discursivas)</a></li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="scripts/atividades/atividades.js"></script>
+</body>
+</html>

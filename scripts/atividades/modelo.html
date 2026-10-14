@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades — Gerador de Atividades</title>
+    <link rel="stylesheet" href="scripts/menu/menu.css">
+    <link rel="stylesheet" href="scripts/atividades/atividades.css">
+</head>
+<body>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a class="menu-principal__link" href="index.html">🗂️ Quadro de tarefas</a>
+        <a class="menu-principal__link menu-principal__link--ativo" href="atividades.html"
+           aria-current="page">📚 Atividades</a>
+    </nav>
+
+    <header class="topo-atividades">
+        <h1>📚 Atividades</h1>
+        <p class="topo-atividades__subtitulo">Atividades geradas, por matéria · atualizado em
+            {{GERADO_EM}} (não editar este arquivo à mão)</p>
+    </header>
+
+    <main class="conteudo-atividades">
+        <label class="busca-atividades">Busca
+            <input id="busca-atividades" type="search" placeholder="Matéria ou atividade...">
+        </label>
+        <p class="resultado-atividades" id="resultado-atividades" aria-live="polite"></p>
+        <section class="grade-materias" id="grade-materias" aria-label="Matérias">
+{{CARDS}}
+        </section>
+    </main>
+
+    <script src="scripts/atividades/atividades.js"></script>
+</body>
+</html>

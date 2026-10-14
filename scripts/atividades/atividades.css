@@ -1,0 +1,84 @@
+/* Página atividades.html: um card por matéria com os links das atividades geradas. */
+:root {
+    --cor-primaria: #003399;
+    --cor-fundo: #f3f5f9;
+    --cor-cartao: #ffffff;
+    --cor-texto: #1d2330;
+    --cor-texto-suave: #5b6475;
+    --cor-borda: #d9dee8;
+    --raio: 10px;
+    --sombra: 0 1px 3px rgba(16, 24, 40, 0.12);
+    --espaco: 16px;
+    --fonte: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--fonte);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Layout */
+.topo-atividades {
+    background: var(--cor-primaria);
+    color: #ffffff;
+    padding: 20px var(--espaco);
+}
+.topo-atividades h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.topo-atividades__subtitulo { margin: 0; opacity: 0.9; font-size: 0.9rem; }
+
+.conteudo-atividades { max-width: 1200px; margin: 0 auto; padding: var(--espaco); }
+
+.grade-materias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--espaco);
+}
+
+/* Busca */
+.busca-atividades {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+}
+.busca-atividades input {
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    max-width: 480px;
+}
+.resultado-atividades { color: var(--cor-texto-suave); font-size: 0.85rem; margin: 8px 0 12px; }
+
+/* Card da matéria */
+.materia {
+    background: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-top: 5px solid var(--cor-primaria);
+    border-radius: var(--raio);
+    padding: 14px;
+    box-shadow: var(--sombra);
+}
+.materia__titulo { margin: 0 0 4px; font-size: 1.1rem; color: var(--cor-primaria); }
+.materia__curso { margin: 0 0 4px; font-size: 0.9rem; }
+.materia__quantidade { margin: 0 0 10px; font-size: 0.8rem; color: var(--cor-texto-suave); }
+.materia__lista { list-style: none; margin: 0; padding: 0; }
+.materia__atividade { border-top: 1px solid var(--cor-borda); }
+.materia__atividade a {
+    display: block;
+    padding: 7px 2px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.materia__atividade a:hover { color: var(--cor-primaria); text-decoration: underline; }
+.materia__vazio { color: var(--cor-texto-suave); font-size: 0.9rem; }
+
+/* Estado (busca) */
+.esta-oculto { display: none; }

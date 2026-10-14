@@ -7,7 +7,7 @@ deve ser adicionado o link nesta pagina, adicione esta regra" · "nesta pagina d
 materias devem aparecer em forma de cards".
 **Objetivo:** achar todas as atividades geradas numa página só, organizada por matéria, sempre
 atualizada pelos geradores.
-**Próximo passo:** 004.1 — aguardar a aprovação do plano pelo usuário.
+**Próximo passo:** 004.7 — aceite do usuário.
 
 ### Escopo
 
@@ -41,10 +41,10 @@ atualiza a página sozinho; menu presente nas duas páginas; `node --check` e co
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 004.1 | Aprovação do plano pelo usuário | 👀 Aguardando o usuário | — | — |
-| 004.2 | Leitor das atividades + `scripts/gerar_pagina_atividades.py` | ⬜ Pendente | — | Saída com 1 matéria e 2 atividades |
-| 004.3 | Tela da página (cards por matéria, busca) + menu compartilhado | ⬜ Pendente | — | `node --check` |
-| 004.4 | Menu no `index.html` (modelo do quadro) | ⬜ Pendente | — | Link presente |
-| 004.5 | `gerar.py` e `ATIVIDADE-PRATICA.py` atualizam a página sozinhos | ⬜ Pendente | — | Gerar atividade e conferir a página |
-| 004.6 | Regra no `CLAUDE.md` + README, quadro regenerado, commit + push | ⬜ Pendente | — | `git log` |
-| 004.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 004.1 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-14 09:07 | Usuário respondeu "sim" |
+| 004.2 | Leitor das atividades + `scripts/gerar_pagina_atividades.py` | ✅ Concluído | 2026-10-14 09:08 | 1 matéria (TESTES DE FRONT-END) com 2 atividades |
+| 004.3 | Tela da página (cards por matéria, busca) + menu compartilhado | ✅ Concluído | 2026-10-14 09:08 | `node --check` ok; linhas ≤ 100 caracteres |
+| 004.4 | Menu no `index.html` (modelo do quadro) | ✅ Concluído | 2026-10-14 09:08 | Links "Quadro de tarefas" e "Atividades" no `index.html` e no `atividades.html` |
+| 004.5 | `gerar.py` e `ATIVIDADE-PRATICA.py` atualizam a página sozinhos | ✅ Concluído | 2026-10-14 09:08 | Os dois geradores rodados: "atividades.html atualizado"; páginas das atividades sem mudança |
+| 004.6 | Regra no `CLAUDE.md` + README, quadro regenerado, commit + push | ✅ Concluído | 2026-10-14 09:08 | `git log` / push para origin/main |
+| 004.7 | Aceite do usuário (abrir `index.html` → menu Atividades) | 👀 Aguardando o usuário | — | — |
