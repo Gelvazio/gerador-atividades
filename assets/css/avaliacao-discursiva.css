@@ -1,0 +1,230 @@
+/* Avaliações discursivas: campos de resposta por tópico, situação da gravação, painel e entrega.
+   Complementa assets/css/atividade.css (cartões, selos e caixas de conteúdo).
+   Plano: docs/avaliacao-pratica-discursiva-itic.md */
+
+:root {
+    --discursiva-borda: #cbd5e0;
+    --discursiva-foco: #667eea;
+    --discursiva-fundo-campo: #ffffff;
+    --discursiva-fundo-travado: #f7fafc;
+    --discursiva-texto-suave: #718096;
+    --discursiva-aula-fundo: #ebf4ff;
+    --discursiva-aula-texto: #2c5282;
+    --discursiva-pontos-fundo: #fefcbf;
+    --discursiva-pontos-texto: #744210;
+    --discursiva-gravada: #2f855a;
+    --discursiva-gravada-fundo: #f0fff4;
+    --discursiva-pendente: #b7791f;
+    --discursiva-erro: #c53030;
+    --discursiva-erro-fundo: #fff5f5;
+    --discursiva-barra-fundo: #e2e8f0;
+    --discursiva-barra: #38a169;
+    --discursiva-secundario: #718096;
+    --discursiva-secundario-hover: #4a5568;
+    --discursiva-raio: 8px;
+    --discursiva-aviso-fundo: #fff5f5;
+    --discursiva-aviso-borda: #c53030;
+    --discursiva-aviso-texto: #742a2a;
+}
+
+/* Questão */
+.questao-discursiva__aula {
+    display: inline-block;
+    margin: 0 0 6px 8px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: var(--discursiva-aula-fundo);
+    color: var(--discursiva-aula-texto);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.questao-discursiva__rotulo-topicos {
+    margin: 18px 0 8px;
+}
+
+/* Tópico de resposta */
+.topico-resposta {
+    margin: 12px 0;
+    padding: 12px;
+    border: 1px solid var(--discursiva-borda);
+    border-radius: var(--discursiva-raio);
+    background: var(--discursiva-fundo-campo);
+}
+
+/* Professor: a prova inteira (instruções e questões) fica escondida até escolher um aluno em
+   "Respostas dos alunos"; o painel e o Progresso da turma continuam visíveis. */
+.discursiva--respostas-ocultas .content-section > .aula-card:not(.painel-discursivo),
+.discursiva--respostas-ocultas .container > header .voltar {
+    display: none;
+}
+
+.topico-resposta__rotulo {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.topico-resposta__letra {
+    margin-right: 4px;
+    color: var(--discursiva-foco);
+    font-weight: 800;
+}
+
+.topico-resposta__pontos {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--discursiva-pontos-fundo);
+    color: var(--discursiva-pontos-texto);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.topico-resposta__campo {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 110px;
+    padding: 10px;
+    border: 1px solid var(--discursiva-borda);
+    border-radius: var(--discursiva-raio);
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.topico-resposta__campo:focus {
+    outline: 2px solid var(--discursiva-foco);
+    outline-offset: 1px;
+}
+
+.topico-resposta__campo[readonly] {
+    background: var(--discursiva-fundo-travado);
+    cursor: not-allowed;
+}
+
+.topico-resposta__rodape {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--discursiva-texto-suave);
+}
+
+.topico-resposta__gravar {
+    margin-left: auto;
+    padding: 4px 12px;
+    border: 1px solid var(--discursiva-gravada);
+    border-radius: var(--discursiva-raio);
+    background: var(--discursiva-gravada-fundo);
+    color: var(--discursiva-gravada);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.topico-resposta__gravar:hover:not(:disabled) {
+    background: var(--discursiva-gravada);
+    color: var(--discursiva-fundo-campo);
+}
+
+.topico-resposta__gravar:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.topico-resposta__situacao {
+    font-weight: 600;
+}
+
+/* Situações da gravação (modificadores do bloco) */
+.topico-resposta--gravada { border-color: var(--discursiva-gravada); }
+.topico-resposta--gravada .topico-resposta__situacao { color: var(--discursiva-gravada); }
+.topico-resposta--pendente .topico-resposta__situacao,
+.topico-resposta--gravando .topico-resposta__situacao { color: var(--discursiva-pendente); }
+.topico-resposta--erro { border-color: var(--discursiva-erro); }
+.topico-resposta--erro .topico-resposta__situacao { color: var(--discursiva-erro); }
+
+.topico-resposta--faltando {
+    border: 2px solid var(--discursiva-erro);
+    background: var(--discursiva-erro-fundo);
+}
+
+/* Painel de identificação e progresso */
+.painel-discursivo__texto {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.painel-discursivo__progresso {
+    margin: 12px 0;
+}
+
+.painel-discursivo__barra {
+    height: 12px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--discursiva-barra-fundo);
+}
+
+.painel-discursivo__barra-preenchida {
+    width: 0;
+    height: 100%;
+    background: var(--discursiva-barra);
+    transition: width 0.3s;
+}
+
+.painel-discursivo__progresso-texto {
+    margin: 6px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.painel-discursivo .btn-export {
+    margin: 6px 8px 0 0;
+}
+
+.btn-export--secundario { background: var(--discursiva-secundario); }
+.btn-export--secundario:hover { background: var(--discursiva-secundario-hover); }
+
+/* Entrega */
+.entrega-discursiva__texto {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.entrega-discursiva__botao[hidden] {
+    display: none;
+}
+
+.entrega-discursiva__botao:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+@media (max-width: 600px) {
+    .topico-resposta { padding: 10px; }
+    .topico-resposta__rodape { flex-direction: column; }
+    /* 16 px evita o zoom automático do celular ao tocar no campo. */
+    .topico-resposta__campo { font-size: 16px; }
+}
+
+/* Aviso em destaque no início da página (campo "- **Aviso:**" da fonte) */
+.aviso-atividade {
+    margin: 0 0 20px;
+    padding: 16px 20px;
+    border: 3px solid var(--discursiva-aviso-borda);
+    border-radius: var(--discursiva-raio);
+    background: var(--discursiva-aviso-fundo);
+    color: var(--discursiva-aviso-texto);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}

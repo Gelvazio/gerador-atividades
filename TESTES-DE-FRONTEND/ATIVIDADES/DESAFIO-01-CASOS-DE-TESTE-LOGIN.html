@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1 — Aula 02 — Casos de Teste do Login — Casos de Teste Padronizados do Módulo de Login (3 Questões Discursivas)</title>
+    <link rel="stylesheet" href="../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../assets/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="../../assets/css/capacidades.css">
+</head>
+<body data-aula="D1-02" data-tema="Casos de Teste Padronizados do Módulo de Login" data-total="3" data-topicos="9"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim"
+      data-maximo-caracteres="3000">
+    <div class="container">
+        <header>
+            <h1>🔐 Desafio 1 — Aula 02 — Casos de Teste do Login: Casos de Teste Padronizados do Módulo de Login</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 3 Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de DESAFIO-01-CASOS-DE-TESTE-LOGIN.md por gerar.py (modo local) -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 30–40 minutos<br>
+                        <strong>Formato:</strong> Discursiva estruturada (o aluno digita a resposta de cada tópico e exporta o PDF)<br>
+                        <strong>Total de questões:</strong> 3 (9 tópicos)<br>
+                        <strong>Pontuação:</strong> 1,0 ponto por questão, dividido em 3 tópicos (0,2 + 0,4 + 0,4) — total: 3 pontos
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as especificações técnicas da interface</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Reconhecer os requisitos da documentação de testes</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Reconhecer as etapas de planejamento de testes</p>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 SEU PAPEL EM TODAS AS QUESTÕES</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para escrever os casos de teste do módulo de Login de uma aplicação web antes de ela ser publicada. A tela de login tem os campos <strong>E-mail</strong> e <strong>Senha</strong> e o botão <strong>Entrar</strong>; depois do login certo, o usuário vai para o <strong>Painel (Dashboard)</strong>.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO RESPONDER</div>
+                    <div class="content-text">Cada questão é <strong>um caso de teste</strong> e tem <strong>3 tópicos</strong>, cada um com o <strong>seu campo</strong>: <strong>(a)</strong> ID, Título e Pré-requisito; <strong>(b)</strong> os Passos numerados (1, 2, 3...), com os dados usados; <strong>(c)</strong> o Resultado esperado. O resultado esperado tem de ser <strong>verificável</strong>: algo que dá para ver na tela (texto exato da mensagem, página de destino, elemento visível) — &quot;o sistema funciona&quot; não vale. Respostas copiadas da internet ou de colegas recebem nota zero no tópico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor. Dados de teste, textos de mensagem e IDs diferentes dos do padrão valem, desde que estejam corretos e coerentes com o caso. Erros de português não tiram nota se a ideia estiver clara.</div>
+                </div>
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+            <section class="aula-card questao-discursiva" id="item-01" data-item="1">
+                <span class="aula-badge">ITEM 01</span>
+                <span class="questao-discursiva__aula">📚 Aula 02 · Planejamento, Verificação, Validação e Casos de Teste</span>
+                <h2 class="aula-title">Autenticação com Credenciais Válidas (Caminho Feliz)</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes<br>C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa garantir que um usuário cadastrado consegue entrar no sistema com o e-mail e a senha corretos. Este é o primeiro caso da suíte de Login.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva o caso de teste do login com credenciais válidas.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="1" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-01-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Escreva o ID, o Título e o Pré-requisito do caso de teste (o que precisa existir antes de começar).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-01-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os Passos numerados (1, 2, 3...) do teste, informando os dados digitados em cada campo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-01-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o Resultado esperado de forma verificável (o que deve aparecer na tela ao final).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-02" data-item="2">
+                <span class="aula-badge">ITEM 02</span>
+                <span class="questao-discursiva__aula">📚 Aula 02 · Planejamento, Verificação, Validação e Casos de Teste</span>
+                <h2 class="aula-title">Tentativa de Login com Senha Incorreta (Tratamento de Erro)</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes<br>C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa conferir o que o sistema faz quando o usuário digita um e-mail cadastrado com a senha errada. O sistema não pode deixar o usuário entrar e precisa avisá-lo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva o caso de teste do login com senha incorreta.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="2" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-02-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Escreva o ID, o Título e o Pré-requisito do caso de teste.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-02-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os Passos numerados (1, 2, 3...) do teste, informando os dados digitados em cada campo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-02-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o Resultado esperado de forma verificável, incluindo a mensagem mostrada e em que página o usuário fica.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-03" data-item="3">
+                <span class="aula-badge">ITEM 03</span>
+                <span class="questao-discursiva__aula">📚 Aula 02 · Planejamento, Verificação, Validação e Casos de Teste</span>
+                <h2 class="aula-title">Envio com o Campo de E-mail em Branco (Validação no Frontend)</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface<br>C2 — Reconhecer os requisitos da documentação de testes<br>C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa conferir a validação do formulário no navegador: o usuário deixa o campo <strong>E-mail</strong> vazio e clica em <strong>Entrar</strong>. O próprio formulário deve barrar o envio antes de chegar ao servidor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva o caso de teste do envio com o campo de e-mail em branco.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="3" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-03-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Escreva o ID, o Título e o Pré-requisito do caso de teste.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-03-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os Passos numerados (1, 2, 3...) do teste, deixando claro qual campo fica vazio e qual é preenchido.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
+                              maxlength="3000" rows="5"
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-03-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o Resultado esperado de forma verificável, incluindo a mensagem do campo e como saber que o formulário não foi enviado.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
+                              maxlength="3000" rows="6"
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Entregar a atividade</h2>
+                <p class="entrega-discursiva__texto">Confira todos os tópicos, clique em
+                    <strong>📥 Exportar PDF</strong> (no topo da página) e entregue o arquivo ao
+                    professor. As respostas não ficam gravadas nesta página.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Desafio 1 — Aula 02 — Casos de Teste do Login: Casos de Teste Padronizados do Módulo de Login</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>3 Questões • Discursiva</p>
+    </footer>
+
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/exportar-pdf-discursiva.js"></script>
+    <script src="../../assets/js/discursiva-local.js"></script>
+    <script src="../../assets/js/bloqueio-colar-discursiva.js"></script>
+    <script src="../../assets/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>

@@ -147,3 +147,11 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Python
+__pycache__/
+*.pyc
+
+# Respostas certas: o repositorio remoto e PUBLICO, ficam so na maquina do professor
+*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*
+*-50-QUESTOES.md

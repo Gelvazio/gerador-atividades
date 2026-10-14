@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ROTULO}} — {{TEMA}} ({{TOTAL}} Questões Discursivas)</title>
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/avaliacao-discursiva.css">{{CAPACIDADES_CSS}}
+</head>
+<body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-total="{{TOTAL}}" data-topicos="{{TOPICOS}}"
+      data-uc="{{UC}}" data-uc-curta="{{UC_CURTA}}" data-docente="{{DOCENTE}}"{{TURMA}}{{ATRIBUTOS_BODY}}
+      data-maximo-caracteres="{{MAXIMO_CARACTERES}}">
+    <div class="container">
+        <header>
+            <h1>{{ICONE}} {{ROTULO}}: {{TEMA}}</h1>
+            <p>{{UC_CURTA}} · {{CURSO}} — {{TOTAL}} Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de {{ARQUIVO_MD}} por gerar.py (modo local) -->
+{{AVISO}}            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> {{DURACAO}}<br>
+                        <strong>Formato:</strong> {{FORMATO}}<br>
+                        <strong>Total de questões:</strong> {{TOTAL}} ({{TOPICOS}} tópicos)<br>
+                        <strong>Pontuação:</strong> {{PONTUACAO}}{{SLIDES}}
+                    </div>
+                </div>
+{{CAPACIDADES}}
+{{ORIENTACOES}}
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+{{QUESTOES}}
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Entregar a atividade</h2>
+                <p class="entrega-discursiva__texto">Confira todos os tópicos, clique em
+                    <strong>📥 Exportar PDF</strong> (no topo da página) e entregue o arquivo ao
+                    professor. As respostas não ficam gravadas nesta página.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>{{UC}} — {{ROTULO}}: {{TEMA}}</strong></p>
+        <p>{{CURSO}} — SENAI</p>
+        <p>{{TOTAL}} Questões • Discursiva</p>
+    </footer>
+
+    <script src="{{ASSETS}}/js/popup.js"></script>
+    <script src="{{ASSETS}}/js/exportar-pdf-discursiva.js"></script>
+    <script src="{{ASSETS}}/js/discursiva-local.js"></script>
+    <script src="{{ASSETS}}/js/bloqueio-colar-discursiva.js"></script>
+    <script src="{{ASSETS}}/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>

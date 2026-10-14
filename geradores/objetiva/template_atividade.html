@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ROTULO_AULA}} — {{TEMA}} ({{TOTAL}} Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">{{CAPACIDADES_CSS}}
+</head>
+<body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-total="{{TOTAL}}"
+      data-uc="{{UC}}" data-uc-curta="{{UC_CURTA}}"
+      data-docente="{{DOCENTE}}"{{TURMA}}>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>{{ICONE}} {{ROTULO_AULA}}: {{TEMA}}</h1>
+            <p>{{UC_CURTA}} · {{CURSO}} — {{TOTAL}} Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as {{TOTAL}} questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de {{ARQUIVO_MD}} -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> {{DURACAO}}<br>
+                        <strong>Formato:</strong> Múltipla escolha ({{LETRAS}})<br>
+                        <strong>Total de questões:</strong> {{TOTAL}}<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: {{TOTAL}} pontos){{SLIDES}}
+                    </div>
+                </div>
+{{CAPACIDADES}}
+            </div>
+
+{{CARDS}}
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>{{UC}} — {{ROTULO_AULA}}: {{TEMA}}</strong></p>
+        <p>{{CURSO}} — SENAI</p>
+        <p>{{TOTAL}} Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="{{ASSETS}}/js/atividade.js"></script>
+</body>
+</html>

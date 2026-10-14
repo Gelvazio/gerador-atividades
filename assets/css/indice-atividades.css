@@ -1,0 +1,138 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748;
+    /* Espaço do ON/OFF da atividade: chave 52px + margens 12px + espaço entre botões 8px. */
+    --largura-onoff-atividade: 72px;
+    --bloqueio-fundo: #2d3748; --bloqueio-borda: #1a202c; --bloqueio-texto: #a0aec0;
+    --bloqueio-veu: rgba(10, 14, 22, 0.62);
+    --verde-filtro-ativo: #38a169; --verde-filtro-brilho: rgba(56, 161, 105, 0.45);
+}
+/* A altura mínima fica no html: a barra #header-usuario é movida para fora do body e,
+   com min-height no body, a página passaria de 100vh e criaria rolagem sem necessidade. */
+html { min-height: 100%; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--text);
+    padding: 10px 20px 20px;
+}
+.container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 14px 20px 16px; text-align: center; border-bottom: 4px solid var(--gold); }
+header h1 { font-size: 30px; margin-bottom: 4px; line-height: 1.2; }
+header p { opacity: 0.95; }
+.resumo { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 8px 20px; background: #fffbea; border-bottom: 2px solid var(--gold); font-size: 14px; font-weight: 600; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 16px; padding: 20px; }
+.aula { background: #f9fafb; border-left: 5px solid var(--primary); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.topo { display: flex; gap: 12px; align-items: center; }
+.icone { font-size: 34px; }
+.num { font-size: 12px; font-weight: 700; color: var(--primary); letter-spacing: 0.5px; }
+.aula h2 { font-size: 17px; line-height: 1.3; }
+.meta { font-size: 13px; color: #718096; }
+.acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { font-size: 13px; font-weight: 600; text-decoration: none; padding: 7px 12px; border-radius: 16px; border: 2px solid var(--primary); color: var(--primary); background: white; }
+.btn:hover { background: #eef0fd; }
+.btn.principal { background: #f7941d; border-color: #f7941d; color: white; }
+.btn.principal:hover { background: #d97706; border-color: #d97706; }
+.btn.off { border-color: #cbd5e0; color: #a0aec0; cursor: not-allowed; }
+/* Botões de atividade com a mesma largura (2026-10-09): cada um ocupa a linha; com o ON/OFF
+   do professor ao lado, deixa o espaço do ON/OFF (assets/css/indice-atividades-bloquear.css). */
+.acoes .btn.principal { flex: 1 1 100%; box-sizing: border-box; text-align: center; }
+/* Com o ON/OFF: o botão encolhe e o texto fica menor e quebra a linha, para o ON/OFF ficar
+   SEMPRE ao lado (também no celular). */
+.acoes .btn.principal:has(+ .interruptor-atividade) {
+    flex: 1 1 calc(100% - var(--largura-onoff-atividade));
+    min-width: 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+details { font-size: 13px; }
+summary { cursor: pointer; font-weight: 600; color: var(--secondary); }
+details ol { margin: 8px 0 0 22px; columns: 2; column-gap: 24px; }
+details li { break-inside: avoid; margin-bottom: 2px; }
+footer { background: #2d3748; color: white; padding: 24px 20px; text-align: center; font-size: 14px; }
+@media (max-width: 600px) {
+    html { -webkit-text-size-adjust: 100%; }
+    body { padding: 0; }
+    .container { border-radius: 0; box-shadow: none; }
+    header { padding: 12px 12px 14px; }
+    header h1 { font-size: 21px; line-height: 1.3; }
+    header p { font-size: 14px; }
+    .resumo { gap: 6px 10px; padding: 8px 10px; font-size: 13px; }
+    .grade { padding: 10px; gap: 12px; grid-template-columns: 1fr; }
+    .aula { padding: 14px 12px; gap: 10px; border-left-width: 4px; }
+    .icone { font-size: 28px; }
+    .num { font-size: 12px; }
+    .aula h2 { font-size: 17px; }
+    .meta { font-size: 14px; }
+    /* Botões grandes para o dedo: a atividade principal ocupa a linha inteira. */
+    .acoes { gap: 8px; }
+    .btn {
+        flex: 1 1 calc(50% - 4px);
+        display: flex; align-items: center; justify-content: center; text-align: center;
+        min-height: 44px; padding: 10px 12px; font-size: 14px; border-radius: 12px;
+    }
+    .btn.principal { flex-basis: 100%; font-size: 15px; }
+    details { font-size: 15px; }
+    summary { padding: 6px 0; }
+    details ol { columns: 1; margin-left: 20px; }
+    details li { margin-bottom: 4px; }
+    .aula.bloqueada::before,
+    .aula.bloqueada-professor::before,
+    .aula.aula--bloqueada-professor::before { font-size: 64px; }
+    .menu-principal { flex-wrap: wrap; }
+    .menu-principal a { padding: 9px 16px; }
+    .faixa-materias { border-radius: 0; margin-bottom: 0; padding: 10px; }
+    .faixa-materias__lista { columns: 2 150px; }
+    .faixa-materias__card { padding: 10px; font-size: 14px; }
+    footer { padding: 18px 12px; }
+}
+/* Atividade bloqueada (aluno e professor, todas as matérias): card escurecido + cadeado grande */
+.aula.bloqueada,
+.aula.bloqueada-professor,
+.aula.aula--bloqueada-professor {
+    position: relative; background: var(--bloqueio-fundo); border-left-color: var(--bloqueio-borda);
+    color: var(--bloqueio-texto);
+}
+.aula.bloqueada::before,
+.aula.bloqueada-professor::before,
+.aula.aula--bloqueada-professor::before {
+    content: "🔒"; position: absolute; inset: 0; z-index: 1; display: flex;
+    align-items: center; justify-content: center; font-size: 96px; border-radius: 8px;
+    background: var(--bloqueio-veu); pointer-events: none;
+}
+/* Aluno/visitante: o véu cobre o card inteiro e recebe o clique (nenhum link fica acessível) */
+.aula.bloqueada { cursor: not-allowed; }
+.aula.bloqueada::before { pointer-events: auto; }
+.aula.bloqueada a { pointer-events: none; }
+/* Professor: links do card bloqueado desativados (sem href); interruptor e botões continuam */
+.aula.bloqueada-professor a:not([href]) { cursor: not-allowed; opacity: 0.6; }
+
+.menu-principal { margin-top: 14px; display: flex; justify-content: center; gap: 10px; }
+.menu-principal a { color: white; font-size: 13px; font-weight: 700; text-decoration: none; padding: 7px 18px; border: 2px solid var(--gold); border-radius: 16px; }
+.menu-principal a:hover { background: var(--gold); color: var(--primary); }
+.menu-principal[hidden] { display: none; }
+
+.faixa-materias { background: white; border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); }
+.faixa-materias__titulo { display: block; font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+.faixa-materias__lista { columns: 3 240px; column-gap: 8px; }
+.faixa-materias__card { display: block; break-inside: avoid; margin-bottom: 8px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--text); background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 8px 12px; }
+.faixa-materias__card:hover { border-color: var(--primary); background: #eef0fd; }
+.faixa-materias__card--atual { background: var(--primary); border-color: var(--primary); color: white; }
+/* Faixa de matérias: barra SOMENTE ENSALADO / VER TODAS MATÉRIAS e botão ON/OFF por matéria */
+.faixa-materias__barra { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.faixa-materias__filtro { font: inherit; font-size: 12px; font-weight: 700; color: var(--primary); background: white; border: 2px solid var(--primary); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+.faixa-materias__filtro:hover { background: #eef0fd; }
+/* Botão do filtro em uso (SOMENTE ENSALADO ou VER TODAS MATÉRIAS): verde, piscando levemente */
+.faixa-materias__filtro--ativo, .faixa-materias__filtro--ativo:hover { color: white; background: var(--verde-filtro-ativo); border-color: var(--verde-filtro-ativo); animation: piscar-filtro-ativo 1.6s ease-in-out infinite; }
+@keyframes piscar-filtro-ativo { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--verde-filtro-brilho); } 50% { opacity: 0.8; box-shadow: 0 0 0 4px var(--verde-filtro-brilho); } }
+@media (prefers-reduced-motion: reduce) { .faixa-materias__filtro--ativo { animation: none; } }
+.faixa-materias__item { display: flex; gap: 6px; align-items: stretch; break-inside: avoid; margin-bottom: 8px; }
+.faixa-materias__item[hidden] { display: none; }
+.grade > article[hidden] { display: none; }
+.faixa-materias__item > .faixa-materias__card { flex: 1 1 auto; margin-bottom: 0; }
+.faixa-materias__onoff { font: inherit; font-size: 11px; font-weight: 800; color: #4a5568; background: #edf2f7; border: 2px solid #cbd5e0; border-radius: 8px; padding: 0 8px; cursor: pointer; min-width: 44px; }
+.faixa-materias__onoff--ligado { color: white; background: #38a169; border-color: #38a169; }
+
+/* Enquanto o bloqueio da aula é conferido (assets/js/indice-aula-data.js), nenhum link do card
+   abre: sem isso, o aluno abria os slides da aula bloqueada antes de o card ser bloqueado. */
+.indice--conferindo-aula .aula a { pointer-events: none; opacity: 0.6; }

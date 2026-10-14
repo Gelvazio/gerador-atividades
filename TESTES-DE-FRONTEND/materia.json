@@ -1,0 +1,17 @@
+{
+  "uc": "Testes de Front-End",
+  "uc_curta": "Testes de Front-End",
+  "curso": "Técnico em Informática para Internet",
+  "docente": "Gelvazio Camargo",
+  "capacidades": {
+    "C1": "Reconhecer as especificações técnicas da interface",
+    "C2": "Reconhecer os requisitos da documentação de testes",
+    "C3": "Reconhecer as etapas de planejamento de testes",
+    "C4": "Aplicar testes definidos no Plano de Testes.",
+    "C5": "Desenvolver conjunto de testes automatizados"
+  },
+  "capacidades_socioemocionais": {
+    "S1": "Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade",
+    "S2": "Fundamentar escolhas e decisões no exame de fatos, contextos, possibilidades, desafios e problemáticas de diferentes naturezas à luz de referenciais técnicos, legais, normativos e institucionais"
+  }
+}

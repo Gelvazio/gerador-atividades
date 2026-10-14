@@ -1,0 +1,36 @@
+/* Quadro de capacidades da ementa nas avaliações (início e em cada questão).
+   Gerado por assets/gerador-capacidades/capacidades.py. */
+:root {
+    --capacidades-faixa: #1f3864;
+    --capacidades-faixa-texto: #ffffff;
+    --capacidades-texto: #000000;
+    --capacidades-fundo: #ffffff;
+}
+
+.quadro-capacidades {
+    margin: 15px 0;
+    background: var(--capacidades-fundo);
+    color: var(--capacidades-texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.quadro-capacidades__titulo {
+    background: var(--capacidades-faixa);
+    color: var(--capacidades-faixa-texto);
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    margin-bottom: 8px;
+}
+
+.quadro-capacidades__linha {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0 0 4px;
+}
+
+@media (max-width: 600px) {
+    .quadro-capacidades__titulo { font-size: 16px; }
+    .quadro-capacidades__linha { font-size: 15px; line-height: 1.5; margin-bottom: 8px; }
+}
