@@ -18,6 +18,7 @@ const ARQUIVO_TURMA_DISCURSIVA = 'turma-exportacao.js';
 const ARQUIVO_TURMA_UNIDADE_DISCURSIVA = 'unidade.js';
 const BASE_SCRIPTS_PDF_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const TURMA_EM_BRANCO_DISCURSIVA = '___________________';
+const DATA_EM_BRANCO_DISCURSIVA = '___/___/___';
 const MARGEM_PDF_DISCURSIVA = 15;
 const COR_SENAI_PDF_DISCURSIVA = [0, 51, 153];
 const COR_CINZA_PDF_DISCURSIVA = [240, 240, 240];
@@ -81,7 +82,8 @@ async function garantirJsPdfDiscursiva() {
 
 /**
  * Lê os dados do cabeçalho: título (h1 sem emoji), UC, docente (professor logado ou da página).
- * @returns {Promise<{titulo: string, uc: string, ucCurta: string, docente: string, total: string}>}
+ * @returns {Promise<{titulo: string, uc: string, ucCurta: string, docente: string, total: string,
+ *     data: string}>} Dados do cabeçalho (data da página ou em branco).
  */
 async function dadosCabecalhoDiscursiva() {
     const dados = document.body.dataset;
@@ -96,7 +98,7 @@ async function dadosCabecalhoDiscursiva() {
     }
     return { titulo: textoPdfDiscursiva(document.querySelector('header h1')?.textContent),
         uc: dados.uc || '', ucCurta: dados.ucCurta || dados.uc || '', docente,
-        total: dados.total || '' };
+        total: dados.total || '', data: dados.data || DATA_EM_BRANCO_DISCURSIVA };
 }
 
 /**
@@ -156,7 +158,7 @@ function desenharCabecalhoDiscursiva(doc, { cabecalho, turma, config }) {
             { content: 'Desempenho', styles: cinza }],
             [{ content: (cabecalho.titulo + ' (' + cabecalho.total + ' ITENS)').toUpperCase(),
                 colSpan: 4, styles: { fontStyle: 'bold' } }],
-            [{ content: 'Data: ___/___/___' }, { content: '' }, { content: '' }, { content: '' }],
+            [{ content: 'Data: ' + cabecalho.data }, { content: '' }, { content: '' }, { content: '' }],
             [{ content: textoPdfDiscursiva('Docente: ' + cabecalho.docente.toUpperCase()), colSpan: 2,
                 styles: { fontStyle: 'bold' } }, { content: '' }, { content: '' }],
             [{ content: textoPdfDiscursiva('Unidade Curricular: ' + cabecalho.uc), colSpan: 2 },

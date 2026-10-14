@@ -11,6 +11,10 @@ Fonte (.md):
     - **Página:** NOME.html                (opcional)
     - **Capacidade:** C2, C3               (códigos do materia.json)
     - **Linhas da resposta:** 30           (opcional; padrão 20)
+    - **Data:** 14/10/2026                 (opcional; vazio = "preenchimento pelo docente")
+    - **Docente:** GELVAZIO CAMARGO        (opcional; idem)
+    - **Turma:** T TIIN 2026/1 M1 ...      (opcional; idem)
+    O campo Estudante sai sempre em branco (o aluno escreve o nome).
     ## ITEM 1 — Título
     **Contexto:** ...
     **Comando:** ...
@@ -38,6 +42,10 @@ LOGO = ASSETS / "img" / "logo-sesi-senai.png"
 PASTA_FONTES = "CONTEUDO"
 TITULO_PADRAO = "ATIVIDADE PRÁTICA"
 TIPO_ATIVIDADE = "Prática (1 questão)"
+CAMPO_DATA = "Data"
+CAMPO_DOCENTE = "Docente"
+CAMPO_TURMA = "Turma"
+AVISO_PREENCHER_DOCENTE = '<em class="preencher">preenchimento pelo docente</em>'
 LINHAS_PADRAO = 20
 PREFIXO_CURSO = "Técnico em "
 CAMPOS_CAPACIDADES = ("capacidades", "capacidades_socioemocionais")
@@ -141,6 +149,22 @@ def html_topicos(texto_topicos):
     return f'{RECUO}<ul class="questao__topicos">{itens}\n{RECUO}</ul>'
 
 
+def campo_do_cabecalho(metadados, nome):
+    """Valor de Data, Docente ou Turma do cabeçalho, ou o aviso de preenchimento pelo docente.
+
+    Args:
+        metadados: Metadados da fonte.
+        nome: Campo da fonte (Data, Docente ou Turma).
+
+    Returns:
+        HTML do valor.
+    """
+    valor = (metadados.get(nome) or "").strip()
+    if not valor:
+        return AVISO_PREENCHER_DOCENTE
+    return escapar(valor)
+
+
 def logo_em_data_uri():
     """Logo SESI SENAI embutido (o Word recebe a imagem sem depender de arquivo).
 
@@ -187,6 +211,9 @@ def montar_trocas(metadados, questao, dados, pasta_pagina):
         "{{COMANDO}}": escapar(extrair_secao(questao, "Comando")),
         "{{TOPICOS}}": html_topicos(extrair_secao(questao, "Tópicos")),
         "{{LINHAS}}": linhas, "{{LOGO}}": logo_em_data_uri(),
+        "{{DATA}}": campo_do_cabecalho(metadados, CAMPO_DATA),
+        "{{DOCENTE}}": campo_do_cabecalho(metadados, CAMPO_DOCENTE),
+        "{{TURMA}}": campo_do_cabecalho(metadados, CAMPO_TURMA),
         "{{PRAZO}}": prazo.tags_meta(metadados, TIPO_ATIVIDADE),
         "{{ASSETS}}": caminho_relativo_assets(pasta_pagina),
         "{{RODAPE}}": escapar(f"{titulo} · {dados['uc_curta']} · SENAI"),

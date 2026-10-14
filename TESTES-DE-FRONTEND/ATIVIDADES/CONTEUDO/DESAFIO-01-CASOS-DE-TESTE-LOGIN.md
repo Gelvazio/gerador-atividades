@@ -12,6 +12,9 @@
 - **Página:** DESAFIO-01-CASOS-DE-TESTE-LOGIN.html
 - **Bloquear colar:** sim
 - **Campo do tamanho da resposta:** sim
+- **Data:** 14/10/2026
+- **Docente:** GELVAZIO CAMARGO
+- **Turma:** T TIIN 2026/1 M1 · SENAI RIO DO SUL MANHÃ (124519)
 - **Capacidade avaliada:** Escrever casos de teste padronizados (ID, Título, Pré-requisito, Passos numerados e Resultado esperado verificável) para o módulo de Login de uma aplicação web, conforme a aula 02 (Planejamento, Verificação, Validação e Casos de Teste): caminho feliz, tratamento de erro e validação de formulário no frontend.
 - **Correção:** o aluno entrega o PDF exportado; o professor corrige cada tópico pelo padrão de resposta (DESAFIO-01-CASOS-DE-TESTE-LOGIN-GABARITO.md, só do professor).
 - **Data de entrega inicial:** 14/10/2026

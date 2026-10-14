@@ -5,6 +5,9 @@
 - **Página:** ATIVIDADE-PRATICA-DESAFIO-01-CASOS-DE-TESTE.html
 - **Capacidade:** C2, C3
 - **Linhas da resposta:** 30
+- **Data:** 14/10/2026
+- **Docente:** GELVAZIO CAMARGO
+- **Turma:** T TIIN 2026/1 M1 · SENAI RIO DO SUL MANHÃ (124519)
 - **Data de entrega inicial:** 14/10/2026
 - **Hora de entrega inicial:** 07:00
 - **Data de entrega final:** 14/10/2026

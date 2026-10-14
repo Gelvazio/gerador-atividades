@@ -62,6 +62,19 @@ atualizar à mão (página criada de outro jeito):
 python scripts/gerar_pagina_atividades.py
 ```
 
+## Cabeçalho: Data, Docente e Turma
+
+Campos opcionais no cabeçalho da fonte `.md` (prática de 1 questão e discursiva/prática):
+
+```
+- **Data:** 14/10/2026
+- **Docente:** GELVAZIO CAMARGO
+- **Turma:** T TIIN 2026/1 M1 · SENAI RIO DO SUL MANHÃ (124519)
+```
+
+Na prática de 1 questão, campo vazio sai como "preenchimento pelo docente"; o campo **Estudante**
+sai sempre em branco (o aluno escreve o nome). Na discursiva, os valores vão para o PDF.
+
 ## Prazo de entrega
 
 Toda atividade tem prazo, no cabeçalho da fonte `.md`:

@@ -10,7 +10,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main | #7 ([007-0b5257d3](etapas/ETAPA-007-0b5257d3-CABECALHO-DOCENTE-TURMA-DATA.md)) em execução; #6 plano aguardando aprovação; #1 a #5 aguardam aceite | 🔄 Ativa | 2026-10-14 09:29 |
+| local · main | #6 plano aguardando aprovação; #1 a #5 e #7 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 09:30 |
 
 ## 📌 Tarefas
 
@@ -22,7 +22,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado ·
 | #4-6e1ac89d-4bfc-486c | Menu "Atividades" e página `atividades.html` (matérias em cards, atualizada pelos geradores) | 🟠 Alta | — | 👀 Aguardando aceite | — | [004-6e1ac89d](etapas/ETAPA-004-6e1ac89d-MENU-E-PAGINA-ATIVIDADES.md) |
 | #5-5ffac7c5-a87c-42ab | Cards de atividade com prazo de entrega (data/hora inicial e final) no `atividades.html` | 🟠 Alta | — | 👀 Aguardando aceite | — | [005-5ffac7c5](etapas/ETAPA-005-5ffac7c5-CARDS-DE-ATIVIDADE-E-PRAZOS.md) |
 | #6-b763ffc4-d5bd-4890 | Colocar o repositório no padrão do template de IA (`template-inicial-tasks-ia`) | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 09:21) | [006-b763ffc4](etapas/ETAPA-006-b763ffc4-PADRAO-TEMPLATE-IA.md) |
-| #7-0b5257d3-3a47-4ae1 | Cabeçalho com Docente, Turma e Data nas atividades de Testes de Front-End | 🟠 Alta | — | 🔄 Em execução | local · main (desde 2026-10-14 09:29; pedido direto do usuário) | [007-0b5257d3](etapas/ETAPA-007-0b5257d3-CABECALHO-DOCENTE-TURMA-DATA.md) |
+| #7-0b5257d3-3a47-4ae1 | Cabeçalho com Docente, Turma e Data nas atividades de Testes de Front-End | 🟠 Alta | — | 👀 Aguardando aceite | — | [007-0b5257d3](etapas/ETAPA-007-0b5257d3-CABECALHO-DOCENTE-TURMA-DATA.md) |
 
 ## Escopo do projeto
 
